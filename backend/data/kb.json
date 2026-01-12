@@ -1,0 +1,11 @@
+{
+  "city": "Lyon",
+  "districts": [
+    {"name": "Vieux-Lyon", "keywords": ["traboules", "renaissance", "historique"], "best_for": ["balade", "culture"]},
+    {"name": "Presqu'île", "keywords": ["shopping", "restaurants", "central"], "best_for": ["sorties", "gastronomie"]}
+  ],
+  "rules": [
+    {"id": "weather.rain", "if_keywords": ["pluie", "pleut", "mauvais temps"], "suggest": ["musées", "expositions", "activités indoor"]},
+    {"id": "budget.free", "if_keywords": ["gratuit", "gratuite", "pas cher"], "suggest": ["balades", "parcs", "points de vue"]}
+  ]
+}
