@@ -1,0 +1,19 @@
+.chat-launcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+}
+
+.chat-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  background:white;
+  border:1px solid dimgrey;
+  border-radius:16px;
+}
