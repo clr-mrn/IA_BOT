@@ -1,11 +1,1135 @@
 {
-  "city": "Lyon",
-  "districts": [
-    {"name": "Vieux-Lyon", "keywords": ["traboules", "renaissance", "historique"], "best_for": ["balade", "culture"]},
-    {"name": "Presqu'île", "keywords": ["shopping", "restaurants", "central"], "best_for": ["sorties", "gastronomie"]}
-  ],
-  "rules": [
-    {"id": "weather.rain", "if_keywords": ["pluie", "pleut", "mauvais temps"], "suggest": ["musées", "expositions", "activités indoor"]},
-    {"id": "budget.free", "if_keywords": ["gratuit", "gratuite", "pas cher"], "suggest": ["balades", "parcs", "points de vue"]}
+  "places": [
+  {
+    "id": "museum_001",
+    "name": "Musée des Beaux-Arts de Lyon",
+    "type": "museum",
+    "district": "Presqu'île",
+    "themes": ["art", "culture"],
+    "short_description": "L’un des plus grands musées d’art de France.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_002",
+    "name": "Musée des Confluences",
+    "type": "museum",
+    "district": "Confluence",
+    "themes": ["science", "civilisations"],
+    "short_description": "Musée des sciences et des sociétés à l’architecture contemporaine.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_003",
+    "name": "Musée Gadagne",
+    "type": "museum",
+    "district": "Vieux Lyon",
+    "themes": ["histoire", "marionnettes"],
+    "short_description": "Musée d’histoire de Lyon et des arts de la marionnette.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_004",
+    "name": "Musée d’Art Contemporain de Lyon",
+    "type": "museum",
+    "district": "6e arrondissement",
+    "themes": ["art contemporain"],
+    "short_description": "Musée dédié à la création artistique contemporaine.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_005",
+    "name": "Musée de l’Imprimerie",
+    "type": "museum",
+    "district": "Presqu'île",
+    "themes": ["histoire", "imprimerie"],
+    "short_description": "Musée retraçant l’histoire de l’imprimerie et du livre.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_006",
+    "name": "Musée Lumière",
+    "type": "museum",
+    "district": "Monplaisir",
+    "themes": ["cinéma", "histoire"],
+    "short_description": "Musée dédié aux inventeurs du cinéma.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_007",
+    "name": "Musée des Tissus",
+    "type": "museum",
+    "district": "Presqu'île",
+    "themes": ["textile", "art"],
+    "short_description": "Musée consacré aux textiles et aux arts décoratifs.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_008",
+    "name": "Musée des Arts Décoratifs",
+    "type": "museum",
+    "district": "Presqu'île",
+    "themes": ["design", "arts décoratifs"],
+    "short_description": "Collection d’objets d’art décoratif et de design.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_009",
+    "name": "Centre d’Histoire de la Résistance et de la Déportation",
+    "type": "museum",
+    "district": "7e arrondissement",
+    "themes": ["histoire", "mémoire"],
+    "short_description": "Musée consacré à la Seconde Guerre mondiale.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_010",
+    "name": "Musée de l’Automobile Henri Malartre",
+    "type": "museum",
+    "district": "Agglomération",
+    "themes": ["automobile", "patrimoine"],
+    "short_description": "Collection de véhicules anciens et de transports historiques.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_011",
+    "name": "Musée Jean Couty",
+    "type": "museum",
+    "district": "9e arrondissement",
+    "themes": ["peinture"],
+    "short_description": "Musée consacré à l’œuvre du peintre Jean Couty.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_012",
+    "name": "Musée des Sapeurs-Pompiers Lyon Rhône",
+    "type": "museum",
+    "district": "9e arrondissement",
+    "themes": ["métiers", "histoire"],
+    "short_description": "Musée retraçant l’histoire des pompiers lyonnais.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_013",
+    "name": "Lugdunum – Musée et Théâtres romains",
+    "type": "museum",
+    "district": "Fourvière",
+    "themes": ["antiquité", "archéologie"],
+    "short_description": "Musée et vestiges gallo-romains de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_014",
+    "name": "Musée de la Miniature et du Cinéma",
+    "type": "museum",
+    "district": "Vieux Lyon",
+    "themes": ["cinéma", "miniatures"],
+    "short_description": "Collection de décors miniatures et accessoires de cinéma.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_015",
+    "name": "Musée Africain de Lyon",
+    "type": "museum",
+    "district": "7e arrondissement",
+    "themes": ["cultures", "ethnographie"],
+    "short_description": "Musée dédié aux cultures africaines.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_016",
+    "name": "Musée d’Art Sacré de Fourvière",
+    "type": "museum",
+    "district": "Fourvière",
+    "themes": ["religieux", "art"],
+    "short_description": "Collection d’art religieux et sacré.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_017",
+    "name": "Maison des Canuts",
+    "type": "museum",
+    "district": "Croix-Rousse",
+    "themes": ["soie", "artisanat"],
+    "short_description": "Musée dédié à l’histoire des canuts et de la soie.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_018",
+    "name": "Musée Urbain Tony Garnier",
+    "type": "museum",
+    "district": "8e arrondissement",
+    "themes": ["architecture", "urbanisme"],
+    "short_description": "Musée à ciel ouvert dédié à l’architecte Tony Garnier.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_019",
+    "name": "Musée de la Soie",
+    "type": "museum",
+    "district": "Croix-Rousse",
+    "themes": ["textile", "artisanat"],
+    "short_description": "Présentation du patrimoine textile lyonnais.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_020",
+    "name": "Musée de la Photographie",
+    "type": "museum",
+    "district": "Presqu'île",
+    "themes": ["photographie"],
+    "short_description": "Expositions dédiées à la photographie.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_021",
+    "name": "Institut Lumière",
+    "type": "museum",
+    "district": "Monplaisir",
+    "themes": ["cinéma"],
+    "short_description": "Lieu culturel consacré au cinéma.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_022",
+    "name": "Musée des Arts Forains",
+    "type": "museum",
+    "district": "Confluence",
+    "themes": ["loisirs", "patrimoine"],
+    "short_description": "Objets et attractions foraines historiques.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_023",
+    "name": "Musée des Hospices Civils de Lyon",
+    "type": "museum",
+    "district": "Presqu'île",
+    "themes": ["médecine", "histoire"],
+    "short_description": "Histoire hospitalière lyonnaise.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_024",
+    "name": "Musée du Théâtre Guignol",
+    "type": "museum",
+    "district": "Vieux Lyon",
+    "themes": ["théâtre", "tradition"],
+    "short_description": "Musée dédié au personnage de Guignol.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "museum_025",
+    "name": "Musée des Sciences de Lyon",
+    "type": "museum",
+    "district": "Confluence",
+    "themes": ["science"],
+    "short_description": "Espace pédagogique dédié aux sciences.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_001",
+    "name": "Basilique Notre-Dame de Fourvière",
+    "type": "heritage",
+    "district": "Fourvière",
+    "themes": ["religieux", "panorama"],
+    "short_description": "Basilique emblématique dominant la ville de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_002",
+    "name": "Cathédrale Saint-Jean-Baptiste",
+    "type": "heritage",
+    "district": "Vieux Lyon",
+    "themes": ["religieux", "architecture"],
+    "short_description": "Cathédrale médiévale située dans le Vieux Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_003",
+    "name": "Théâtres romains de Fourvière",
+    "type": "heritage",
+    "district": "Fourvière",
+    "themes": ["antiquité", "archéologie"],
+    "short_description": "Vestiges antiques témoignant de l’époque gallo-romaine.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_004",
+    "name": "Traboules du Vieux Lyon",
+    "type": "heritage",
+    "district": "Vieux Lyon",
+    "themes": ["architecture", "tradition"],
+    "short_description": "Passages typiques reliant les cours intérieures.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_005",
+    "name": "Traboules de la Croix-Rousse",
+    "type": "heritage",
+    "district": "Croix-Rousse",
+    "themes": ["soie", "architecture"],
+    "short_description": "Réseau de passages utilisé par les canuts.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_006",
+    "name": "Hôtel de Ville de Lyon",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["institution", "architecture"],
+    "short_description": "Bâtiment historique de la place des Terreaux.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_007",
+    "name": "Place Bellecour",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["place", "symbole"],
+    "short_description": "Grande place emblématique du centre de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_008",
+    "name": "Place des Terreaux",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["place", "architecture"],
+    "short_description": "Place historique entre l’Hôtel de Ville et le musée.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_009",
+    "name": "Opéra National de Lyon",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["culture", "architecture"],
+    "short_description": "Opéra moderne intégré dans un bâtiment historique.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_010",
+    "name": "Palais de la Bourse",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["architecture", "commerce"],
+    "short_description": "Ancien palais dédié aux échanges commerciaux.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_011",
+    "name": "Tour métallique de Fourvière",
+    "type": "heritage",
+    "district": "Fourvière",
+    "themes": ["panorama"],
+    "short_description": "Tour offrant une vue panoramique sur Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_012",
+    "name": "Pont Bonaparte",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["pont", "architecture"],
+    "short_description": "Pont reliant la Presqu’île au Vieux Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_013",
+    "name": "Pont Lafayette",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["pont"],
+    "short_description": "Pont traversant le Rhône en centre-ville.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_014",
+    "name": "Pont de la Guillotière",
+    "type": "heritage",
+    "district": "Guillotière",
+    "themes": ["pont", "histoire"],
+    "short_description": "Pont ancien reliant les deux rives du Rhône.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_015",
+    "name": "Quartier Saint-Georges",
+    "type": "heritage",
+    "district": "Vieux Lyon",
+    "themes": ["quartier", "tradition"],
+    "short_description": "Quartier historique aux rues pavées.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_016",
+    "name": "Quartier Saint-Paul",
+    "type": "heritage",
+    "district": "Vieux Lyon",
+    "themes": ["quartier", "architecture"],
+    "short_description": "Quartier médiéval du Vieux Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_017",
+    "name": "Quartier Saint-Jean",
+    "type": "heritage",
+    "district": "Vieux Lyon",
+    "themes": ["quartier", "patrimoine"],
+    "short_description": "Cœur historique du Vieux Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_018",
+    "name": "Cour des Voraces",
+    "type": "heritage",
+    "district": "Croix-Rousse",
+    "themes": ["canuts", "architecture"],
+    "short_description": "Cour emblématique liée à l’histoire des canuts.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_019",
+    "name": "Amphithéâtre des Trois Gaules",
+    "type": "heritage",
+    "district": "Croix-Rousse",
+    "themes": ["antiquité"],
+    "short_description": "Vestige romain dédié aux rassemblements antiques.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_020",
+    "name": "Hôtel-Dieu de Lyon",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["architecture", "histoire"],
+    "short_description": "Ancien hôpital reconverti en lieu culturel.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_021",
+    "name": "Gare Saint-Paul",
+    "type": "heritage",
+    "district": "Vieux Lyon",
+    "themes": ["transport", "architecture"],
+    "short_description": "Gare historique du centre ancien.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_022",
+    "name": "Fort de Loyasse",
+    "type": "heritage",
+    "district": "Fourvière",
+    "themes": ["militaire"],
+    "short_description": "Ancien fort militaire sur les hauteurs de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_023",
+    "name": "Aqueducs romains de Lyon",
+    "type": "heritage",
+    "district": "Agglomération",
+    "themes": ["antiquité", "ingénierie"],
+    "short_description": "Vestiges des aqueducs alimentant Lugdunum.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_024",
+    "name": "Cimetière de Loyasse",
+    "type": "heritage",
+    "district": "Fourvière",
+    "themes": ["mémoire", "histoire"],
+    "short_description": "Cimetière historique avec vue sur la ville.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_025",
+    "name": "Mur des Canuts",
+    "type": "heritage",
+    "district": "Croix-Rousse",
+    "themes": ["street art", "tradition"],
+    "short_description": "Fresque monumentale emblématique de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_026",
+    "name": "Fresque des Lyonnais",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["street art", "histoire"],
+    "short_description": "Mur peint représentant des figures lyonnaises.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_027",
+    "name": "Passerelle du Palais de Justice",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["pont"],
+    "short_description": "Passerelle piétonne sur la Saône.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_028",
+    "name": "Halles Paul Bocuse",
+    "type": "heritage",
+    "district": "3e arrondissement",
+    "themes": ["gastronomie"],
+    "short_description": "Marché couvert emblématique de la gastronomie lyonnaise.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_029",
+    "name": "Quartier de la Confluence",
+    "type": "heritage",
+    "district": "Confluence",
+    "themes": ["urbanisme"],
+    "short_description": "Quartier moderne au sud de la Presqu’île.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_030",
+    "name": "Quartier de la Guillotière",
+    "type": "heritage",
+    "district": "Guillotière",
+    "themes": ["quartier", "diversité"],
+    "short_description": "Quartier populaire et multiculturel.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_031",
+    "name": "Quartier des Brotteaux",
+    "type": "heritage",
+    "district": "6e arrondissement",
+    "themes": ["architecture"],
+    "short_description": "Quartier élégant proche du parc de la Tête d’Or.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_032",
+    "name": "Ancienne gare des Brotteaux",
+    "type": "heritage",
+    "district": "6e arrondissement",
+    "themes": ["architecture", "transport"],
+    "short_description": "Ancienne gare transformée en lieu culturel.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_033",
+    "name": "Palais de Justice Historique",
+    "type": "heritage",
+    "district": "Presqu'île",
+    "themes": ["institution", "architecture"],
+    "short_description": "Palais de justice à colonnes au bord de la Saône.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_034",
+    "name": "Cloître Saint-Martin d’Ainay",
+    "type": "heritage",
+    "district": "Ainay",
+    "themes": ["religieux"],
+    "short_description": "Vestige roman de l’ancienne abbaye d’Ainay.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "heritage_035",
+    "name": "Basilique Saint-Martin d’Ainay",
+    "type": "heritage",
+    "district": "Ainay",
+    "themes": ["religieux", "roman"],
+    "short_description": "Église romane majeure de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_001",
+    "name": "Parc de la Tête d’Or",
+    "type": "park",
+    "district": "6e arrondissement",
+    "themes": ["nature", "famille", "zoo"],
+    "short_description": "Grand parc urbain avec lac, jardins botaniques et zoo.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_002",
+    "name": "Parc de Gerland",
+    "type": "park",
+    "district": "7e arrondissement",
+    "themes": ["nature", "promenade"],
+    "short_description": "Parc contemporain au sud de Lyon, le long du Rhône.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_003",
+    "name": "Parc de la Feyssine",
+    "type": "park",
+    "district": "Villeurbanne",
+    "themes": ["nature", "fleuve"],
+    "short_description": "Espace naturel préservé en bord du Rhône.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_004",
+    "name": "Parc Sergent Blandan",
+    "type": "park",
+    "district": "7e arrondissement",
+    "themes": ["famille", "loisirs"],
+    "short_description": "Ancienne caserne transformée en parc urbain.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_005",
+    "name": "Parc des Hauteurs",
+    "type": "park",
+    "district": "Fourvière",
+    "themes": ["panorama", "promenade"],
+    "short_description": "Parc reliant Fourvière au Vieux Lyon avec vue sur la ville.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_006",
+    "name": "Parc de Parilly",
+    "type": "park",
+    "district": "8e arrondissement",
+    "themes": ["sport", "nature"],
+    "short_description": "Grand parc métropolitain dédié aux activités sportives.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_007",
+    "name": "Parc de Miribel-Jonage",
+    "type": "park",
+    "district": "Métropole",
+    "themes": ["nature", "loisirs", "lac"],
+    "short_description": "Grand parc naturel avec plages et activités de plein air.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_008",
+    "name": "Jardin des Curiosités",
+    "type": "park",
+    "district": "5e arrondissement",
+    "themes": ["panorama", "jardin"],
+    "short_description": "Petit jardin offrant une vue remarquable sur Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_009",
+    "name": "Jardin Rosa Mir",
+    "type": "park",
+    "district": "Croix-Rousse",
+    "themes": ["insolite", "jardin"],
+    "short_description": "Jardin insolite décoré de mosaïques et coquillages.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_010",
+    "name": "Jardin du Musée des Beaux-Arts",
+    "type": "park",
+    "district": "Presqu'île",
+    "themes": ["jardin", "culture"],
+    "short_description": "Jardin paisible au cœur d’un ancien cloître.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_011",
+    "name": "Jardin Archéologique de Cybèle",
+    "type": "park",
+    "district": "Croix-Rousse",
+    "themes": ["antiquité", "jardin"],
+    "short_description": "Jardin archéologique avec vestiges antiques.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_012",
+    "name": "Berges du Rhône",
+    "type": "park",
+    "district": "Centre-ville",
+    "themes": ["promenade", "fleuve"],
+    "short_description": "Aménagements piétons le long du Rhône.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_013",
+    "name": "Berges de Saône",
+    "type": "park",
+    "district": "Presqu'île",
+    "themes": ["promenade", "fleuve"],
+    "short_description": "Promenade aménagée le long de la Saône.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_014",
+    "name": "Parc Montel",
+    "type": "park",
+    "district": "Caluire-et-Cuire",
+    "themes": ["nature", "famille"],
+    "short_description": "Parc de quartier calme et verdoyant.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_015",
+    "name": "Parc Chazière",
+    "type": "park",
+    "district": "9e arrondissement",
+    "themes": ["nature"],
+    "short_description": "Petit parc arboré dans l’ouest lyonnais.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_016",
+    "name": "Parc du Vallon",
+    "type": "park",
+    "district": "9e arrondissement",
+    "themes": ["nature", "détente"],
+    "short_description": "Parc récent aménagé autour d’un vallon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_017",
+    "name": "Square Jussieu",
+    "type": "park",
+    "district": "3e arrondissement",
+    "themes": ["jardin", "quartier"],
+    "short_description": "Square de quartier arboré.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_018",
+    "name": "Square des Chartreux",
+    "type": "park",
+    "district": "Croix-Rousse",
+    "themes": ["panorama", "jardin"],
+    "short_description": "Square offrant une belle vue sur la Presqu’île.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_019",
+    "name": "Square de la Tour des Païens",
+    "type": "park",
+    "district": "Vieux Lyon",
+    "themes": ["jardin", "histoire"],
+    "short_description": "Petit square à proximité des vestiges antiques.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_020",
+    "name": "Parc du Clos Layat",
+    "type": "park",
+    "district": "8e arrondissement",
+    "themes": ["nature", "famille"],
+    "short_description": "Parc de quartier avec espaces verts et jeux.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_021",
+    "name": "Parc Nelson Mandela",
+    "type": "park",
+    "district": "7e arrondissement",
+    "themes": ["urbain", "détente"],
+    "short_description": "Parc urbain moderne à proximité des universités.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_022",
+    "name": "Parc des Berges de l’Yzeron",
+    "type": "park",
+    "district": "Ouest lyonnais",
+    "themes": ["nature", "promenade"],
+    "short_description": "Parc naturel le long de la rivière Yzeron.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_023",
+    "name": "Jardin Villemanzy",
+    "type": "park",
+    "district": "Croix-Rousse",
+    "themes": ["jardin", "panorama"],
+    "short_description": "Jardin en terrasses avec vue sur la ville.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_024",
+    "name": "Parc des Chartreux",
+    "type": "park",
+    "district": "Croix-Rousse",
+    "themes": ["promenade", "nature"],
+    "short_description": "Parc linéaire au pied de la colline de la Croix-Rousse.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "park_025",
+    "name": "Parc de la Cerisaie",
+    "type": "park",
+    "district": "Croix-Rousse",
+    "themes": ["culture", "jardin"],
+    "short_description": "Parc culturel accueillant des événements artistiques.",
+    "url": "https://www.visiterlyon.com/"
+  },
+    {
+    "id": "restaurant_001",
+    "name": "Le Bouchon des Filles",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bouchon", "tradition"],
+    "short_description": "Bouchon lyonnais réputé pour sa cuisine traditionnelle.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_002",
+    "name": "Café Comptoir Abel",
+    "type": "restaurant",
+    "district": "Ainay",
+    "themes": ["bouchon", "gastronomie"],
+    "short_description": "Institution lyonnaise de la cuisine traditionnelle.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_003",
+    "name": "Daniel et Denise",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bouchon", "gastronomie"],
+    "short_description": "Bouchon emblématique de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_004",
+    "name": "La Mère Brazier",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["gastronomie"],
+    "short_description": "Restaurant gastronomique historique de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_005",
+    "name": "Les Halles Paul Bocuse",
+    "type": "restaurant",
+    "district": "3e arrondissement",
+    "themes": ["gastronomie", "marché"],
+    "short_description": "Temple de la gastronomie lyonnaise.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_006",
+    "name": "Le Garet",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bouchon"],
+    "short_description": "Bouchon traditionnel apprécié des locaux.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_007",
+    "name": "Café des Fédérations",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bouchon"],
+    "short_description": "Adresse conviviale de spécialités lyonnaises.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_008",
+    "name": "Le Poêlon d’Or",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bouchon"],
+    "short_description": "Bouchon chaleureux à deux pas de Bellecour.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_009",
+    "name": "Auberge du Pont de Collonges",
+    "type": "restaurant",
+    "district": "Agglomération",
+    "themes": ["gastronomie"],
+    "short_description": "Restaurant mythique de Paul Bocuse.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_010",
+    "name": "Brasserie Georges",
+    "type": "restaurant",
+    "district": "Perrache",
+    "themes": ["brasserie"],
+    "short_description": "Grande brasserie historique de Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  },
+
+  {
+    "id": "restaurant_011",
+    "name": "Les Apothicaires",
+    "type": "restaurant",
+    "district": "7e arrondissement",
+    "themes": ["gastronomie", "moderne"],
+    "short_description": "Cuisine créative et moderne.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_012",
+    "name": "Takao Takano",
+    "type": "restaurant",
+    "district": "6e arrondissement",
+    "themes": ["gastronomie"],
+    "short_description": "Restaurant gastronomique contemporain.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_013",
+    "name": "Le Kitchen Café",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["brunch", "café"],
+    "short_description": "Adresse réputée pour ses brunchs.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_014",
+    "name": "Culina Hortus",
+    "type": "restaurant",
+    "district": "Vieux Lyon",
+    "themes": ["végétarien", "gastronomie"],
+    "short_description": "Restaurant gastronomique végétarien.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_015",
+    "name": "Against the Grain",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["moderne"],
+    "short_description": "Cuisine contemporaine et inventive.",
+    "url": "https://www.visiterlyon.com/"
+  },
+
+  {
+    "id": "restaurant_016",
+    "name": "Le Musée",
+    "type": "restaurant",
+    "district": "Vieux Lyon",
+    "themes": ["bouchon"],
+    "short_description": "Bouchon traditionnel au décor atypique.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_017",
+    "name": "Chez Hugon",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bouchon"],
+    "short_description": "Bouchon ancien et très populaire.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_018",
+    "name": "La Bijouterie",
+    "type": "restaurant",
+    "district": "7e arrondissement",
+    "themes": ["moderne"],
+    "short_description": "Cuisine créative et originale.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_019",
+    "name": "M Restaurant",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["gastronomie"],
+    "short_description": "Cuisine gastronomique contemporaine.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_020",
+    "name": "Le Sud",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["cuisine du sud"],
+    "short_description": "Cuisine ensoleillée par Paul Bocuse.",
+    "url": "https://www.visiterlyon.com/"
+  },
+
+  {
+    "id": "restaurant_021",
+    "name": "L’Archange",
+    "type": "restaurant",
+    "district": "6e arrondissement",
+    "themes": ["gastronomie"],
+    "short_description": "Restaurant gastronomique discret.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_022",
+    "name": "Les Lyonnais",
+    "type": "restaurant",
+    "district": "Vieux Lyon",
+    "themes": ["bouchon"],
+    "short_description": "Bouchon labellisé, très apprécié.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_023",
+    "name": "Le Bouchon Tupin",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bouchon"],
+    "short_description": "Cuisine lyonnaise authentique.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_024",
+    "name": "Le Neuvième Art",
+    "type": "restaurant",
+    "district": "6e arrondissement",
+    "themes": ["gastronomie"],
+    "short_description": "Restaurant gastronomique étoilé.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_025",
+    "name": "Comptoir Cecil",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["gastronomie"],
+    "short_description": "Cuisine raffinée et moderne.",
+    "url": "https://www.visiterlyon.com/"
+  },
+
+  {
+    "id": "restaurant_026",
+    "name": "La Table Wei",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["asiatique"],
+    "short_description": "Cuisine asiatique contemporaine.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_027",
+    "name": "Bistro Autrement",
+    "type": "restaurant",
+    "district": "3e arrondissement",
+    "themes": ["bio", "local"],
+    "short_description": "Cuisine responsable et locale.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_028",
+    "name": "La Raffinerie",
+    "type": "restaurant",
+    "district": "7e arrondissement",
+    "themes": ["brasserie"],
+    "short_description": "Brasserie moderne et conviviale.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_029",
+    "name": "La Fabryk",
+    "type": "restaurant",
+    "district": "7e arrondissement",
+    "themes": ["moderne"],
+    "short_description": "Cuisine créative dans un cadre industriel.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_030",
+    "name": "Le Desjeuneur",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["brunch"],
+    "short_description": "Adresse connue pour ses brunchs.",
+    "url": "https://www.visiterlyon.com/"
+  },
+
+  {
+    "id": "restaurant_031",
+    "name": "La Mutinerie",
+    "type": "restaurant",
+    "district": "7e arrondissement",
+    "themes": ["moderne"],
+    "short_description": "Cuisine inventive et produits frais.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_032",
+    "name": "Bistrot Jutard",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bistrot"],
+    "short_description": "Cuisine bistrot moderne.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_033",
+    "name": "Les Loges",
+    "type": "restaurant",
+    "district": "Vieux Lyon",
+    "themes": ["gastronomie"],
+    "short_description": "Restaurant gastronomique dans un cadre Renaissance.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_034",
+    "name": "Les Gamins",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["bistrot"],
+    "short_description": "Bistrot moderne et convivial.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_035",
+    "name": "La Grenade",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["moderne"],
+    "short_description": "Cuisine contemporaine dans un cadre chaleureux.",
+    "url": "https://www.visiterlyon.com/"
+  },
+
+  {
+    "id": "restaurant_036",
+    "name": "L’Étage",
+    "type": "restaurant",
+    "district": "Croix-Rousse",
+    "themes": ["bistrot"],
+    "short_description": "Bistrot convivial sur les pentes.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_037",
+    "name": "Chez Terra",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["végétarien"],
+    "short_description": "Cuisine végétarienne et gourmande.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+  "id": "restaurant_038",
+  "name": "Le Bouchon des Artistes",
+  "type": "restaurant",
+  "district": "Presqu'île",
+  "themes": ["bouchon", "tradition"],
+  "short_description": "Bouchon lyonnais au cœur de la Presqu’île.",
+  "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_039",
+    "name": "Le Moderne",
+    "type": "restaurant",
+    "district": "Presqu'île",
+    "themes": ["brasserie"],
+    "short_description": "Brasserie emblématique de Bellecour.",
+    "url": "https://www.visiterlyon.com/"
+  },
+  {
+    "id": "restaurant_040",
+    "name": "La Voûte Chez Léa",
+    "type": "restaurant",
+    "district": "Vieux Lyon",
+    "themes": ["bouchon"],
+    "short_description": "Bouchon traditionnel sous les voûtes du Vieux Lyon.",
+    "url": "https://www.visiterlyon.com/"
+  }
   ]
 }

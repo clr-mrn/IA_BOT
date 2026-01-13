@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
-from services.agent import Agent
+from backend.services.agent import Agent
+from fastapi import FastAPI
+
+
 
 app = FastAPI(title="IA Bot Backend", version="0.1.0")
 agent = Agent()
