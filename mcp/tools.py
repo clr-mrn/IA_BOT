@@ -1,3 +1,4 @@
+# mcp/tools.py
 import sys
 import time
 import json
@@ -9,7 +10,8 @@ import requests
 from bs4 import BeautifulSoup
 
 # ----------------------------------------------------------------------
-# Fix UTF-8 (évite UnicodeEncodeError sur Windows)
+# (Optionnel) Fix UTF-8 pour affichage console Windows
+# N'impacte pas FastAPI
 # ----------------------------------------------------------------------
 try:
     sys.stdout.reconfigure(encoding="utf-8")
@@ -19,7 +21,7 @@ except Exception:
 BASE = "https://www.visiterlyon.com"
 
 # ----------------------------------------------------------------------
-# Cache TTL très simple (évite de rescraper en boucle)
+# Cache TTL simple (évite de rescraper en boucle)
 # ----------------------------------------------------------------------
 _CACHE: dict[str, tuple[float, str]] = {}  # url -> (timestamp, html)
 CACHE_TTL_S = 300  # 5 minutes
@@ -41,7 +43,7 @@ def _cache_set(url: str, html: str) -> None:
 
 
 # ----------------------------------------------------------------------
-# Utilitaire HTTP + soup
+# HTTP + soup
 # ----------------------------------------------------------------------
 def get_page_soup(url: str) -> Optional[BeautifulSoup]:
     headers = {
@@ -93,6 +95,7 @@ def _extract_jsonld(soup: BeautifulSoup) -> list[dict[str, Any]]:
             continue
     return out
 
+
 def _extract_section_text(soup: BeautifulSoup, keywords: list[str]) -> Optional[str]:
     """
     Cherche une section par titre (h2/h3) contenant un mot-clé
@@ -118,7 +121,9 @@ def _extract_section_text(soup: BeautifulSoup, keywords: list[str]) -> Optional[
     return None
 
 
-
+# ----------------------------------------------------------------------
+# Standard output shapes
+# ----------------------------------------------------------------------
 def _ok_items(source_url: str, items: list[dict[str, Any]]) -> dict[str, Any]:
     return {"ok": True, "source_url": source_url, "items": items, "error": None}
 
@@ -127,21 +132,23 @@ def _ok_item(source_url: str, item: dict[str, Any]) -> dict[str, Any]:
     return {"ok": True, "source_url": source_url, "item": item, "error": None}
 
 
-def _err(source_url: str, msg: str) -> dict[str, Any]:
+def _err_items(source_url: str, msg: str) -> dict[str, Any]:
     return {"ok": False, "source_url": source_url, "items": [], "error": msg}
 
 
+def _err_item(source_url: str, msg: str) -> dict[str, Any]:
+    return {"ok": False, "source_url": source_url, "item": None, "error": msg}
+
+
 # ==============================================================================
-# TOOL 1 — search_site(query)
+# TOOL: scrape_category(query)
 # ==============================================================================
-def search_site(query: str, limit: int = 10) -> dict[str, Any]:
+def scrape_category(query: str, limit: int = 10) -> dict[str, Any]:
     """
-    Recherche sur visiterlyon.com.
-    Retour stable: {ok, source_url, items:[{title,url,type}], error}
+    Recherche simple sur visiterlyon.com.
+    Retour: {ok, source_url, items:[{title,url,type}], error}
     """
     source_url = f"{BASE}/app_search?simple_search%5BsearchText%5D={query}"
-
-    # Mieux que concaténer query brute : requests gère l’encodage si on passe params
     search_url = f"{BASE}/app_search"
     params = {"simple_search[searchText]": query}
 
@@ -155,18 +162,17 @@ def search_site(query: str, limit: int = 10) -> dict[str, Any]:
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
     except Exception:
-        return _err(source_url, "Impossible de contacter le site pour la recherche.")
+        return _err_items(source_url, "Impossible de contacter le site pour la recherche.")
 
     items: list[dict[str, Any]] = []
-    seen = set()
+    seen: set[str] = set()
 
-    # Heuristique: on garde les liens qui pointent vers des pages de contenu
+    # Heuristique: on garde les liens internes vers contenu
     for a in soup.select('a[href^="/"]'):
         href = a.get("href", "")
         if not href:
             continue
 
-        # Filtre: pages "lieux" ou "sortir" (à adapter si vous élargissez)
         if not ("/lieux-a-visiter/" in href or "/sortir/" in href):
             continue
 
@@ -174,15 +180,12 @@ def search_site(query: str, limit: int = 10) -> dict[str, Any]:
         if url in seen:
             continue
 
-        # Titre: essaie h3/h2, sinon texte du lien
         title = _first_text(a.find(["h3", "h2"])) or _first_text(a) or ""
         title = title[:200]
 
-        # Évite les titres vides/génériques
         if not title or title.lower() in {"en savoir plus", "découvrir", "voir"}:
             continue
 
-        # Tag simple
         typ = "place" if "/lieux-a-visiter/" in href else "activity"
 
         seen.add(url)
@@ -195,67 +198,54 @@ def search_site(query: str, limit: int = 10) -> dict[str, Any]:
 
 
 # ==============================================================================
-# TOOL 2 — get_place_details(place_url)
+# TOOL: scrape_place(url)
 # ==============================================================================
-def get_place_details(place_url: str) -> dict[str, Any]:
+def scrape_place(url: str) -> dict[str, Any]:
     """
-    Extrait détails d'un lieu: nom, adresse, téléphone, site_web, horaires, tarifs, description courte.
-    Retour stable: {ok, source_url, item:{...}, error}
+    Extrait les détails pratiques d'un lieu.
+    Retour: {ok, source_url, item:{...}, error}
     """
-    if not place_url.startswith(BASE):
-        return _err(place_url, "URL invalide. L'URL doit provenir de visiterlyon.com")
+    if not url.startswith(BASE):
+        return _err_item(url, "URL invalide. L'URL doit provenir de visiterlyon.com")
 
-    soup = get_page_soup(place_url)
+    soup = get_page_soup(url)
     if not soup:
-        return _err(place_url, "Impossible de récupérer la page (timeout ou erreur réseau).")
+        return _err_item(url, "Impossible de récupérer la page (timeout ou erreur réseau).")
 
-    item: dict[str, Any] = {"url": place_url}
+    jsonld = _extract_jsonld(soup)
 
-    # Nom
+    item: dict[str, Any] = {"url": url}
     item["name"] = _first_text(soup.find("h1"))
 
-    # Téléphone
     phone = soup.select_one('a[href^="tel:"]')
     item["phone"] = _first_text(phone)
 
-    # Site web externe (attention: peut être absent)
-    # On prend le premier lien http(s) externe qui n'est pas visiterlyon.com
-    ext = None
+    # Site externe (premier lien externe)
+    website = None
     for a in soup.select('a[href^="http"]'):
         href = a.get("href", "")
         if href and "visiterlyon.com" not in href:
-            ext = href
+            website = href
             break
-    item["website"] = ext
+    item["website"] = website
 
-    # Adresse (fallback: JSON-LD)
-    address = None
+    # Adresse
+    address = _first_text(soup.find("address") or soup.select_one("[itemprop='address']"))
 
-    # Tentative 1: balises address / microdata
-    addr_el = soup.find("address") or soup.select_one("[itemprop='address']")
-    address = _first_text(addr_el)
-
-    # Tentative 2: zones qui contiennent des mots-clés
     if not address:
         for cand in soup.select("div, p, span"):
             txt = _first_text(cand)
             if not txt:
                 continue
-            # heuristique: une adresse contient souvent un code postal 69xxx
             if re.search(r"\b69\d{3}\b", txt) and ("lyon" in txt.lower()):
                 address = txt
                 break
 
-    # JSON-LD
     if not address:
-        for obj in _extract_jsonld(soup):
+        for obj in jsonld:
             addr = obj.get("address")
             if isinstance(addr, dict):
-                parts = [
-                    addr.get("streetAddress"),
-                    addr.get("postalCode"),
-                    addr.get("addressLocality"),
-                ]
+                parts = [addr.get("streetAddress"), addr.get("postalCode"), addr.get("addressLocality")]
                 parts = [p for p in parts if isinstance(p, str) and p.strip()]
                 if parts:
                     address = _clean_text(" ".join(parts))
@@ -263,72 +253,64 @@ def get_place_details(place_url: str) -> dict[str, Any]:
 
     item["address"] = address
 
-    # Horaires (plus robuste)
+    # Horaires
     opening = None
-
-    # JSON-LD (openingHours / openingHoursSpecification)
-    for obj in _extract_jsonld(soup):
-        if "openingHours" in obj and isinstance(obj["openingHours"], (list, str)):
-            opening = obj["openingHours"]
+    for obj in jsonld:
+        oh = obj.get("openingHours")
+        if isinstance(oh, (list, str)):
+            opening = oh
             break
-
-    # Fallback HTML: sections par titres
     if not opening:
         opening = _extract_section_text(soup, ["horaire", "horaires", "ouverture"])
-
     item["opening_hours"] = opening
 
+    # Tarifs
+    prices = None
+    for obj in jsonld:
+        offers = obj.get("offers")
+        if isinstance(offers, dict):
+            p = offers.get("price")
+            if isinstance(p, (str, int, float)):
+                prices = str(p)
+                break
+    if not prices:
+        prices = _extract_section_text(soup, ["tarif", "tarifs", "prix", "billet", "tickets"])
+    item["prices"] = prices
 
-    # Tarifs (même approche)
-    price = None
-    for obj in _extract_jsonld(soup):
-        if "offers" in obj:
-            # parfois offers.price / priceSpecification
-            offers = obj.get("offers")
-            if isinstance(offers, dict):
-                p = offers.get("price")
-                if isinstance(p, (str, int, float)):
-                    price = str(p)
-                    break
-
-    if not price:
-        price = _extract_section_text(soup, ["tarif", "tarifs", "prix", "billet", "tickets"])
-
-    item["prices"] = price
-
-
-    # Description courte (meta)
+    # Description courte (meta description)
     meta_desc = soup.find("meta", attrs={"name": "description"})
     if meta_desc and meta_desc.get("content"):
         item["short_description"] = _clean_text(meta_desc["content"])
 
-    return _ok_item(place_url, item)
+    return _ok_item(url, item)
 
 
 # ==============================================================================
-# TOOL 3 — get_upcoming_events()
+# TOOL: scrape_events(limit)
 # ==============================================================================
-def get_upcoming_events(limit: int = 10) -> dict[str, Any]:
+def scrape_events(limit: int = 10) -> dict[str, Any]:
     """
-    Récupère des événements de l'agenda (titre + url + info_pratique si dispo).
-    Parsing plus ciblé, évite de prendre tous les h2 de la page.
-    Retour stable: {ok, source_url, items:[...], error}
+    Récupère des événements de l'agenda.
+    Retour: {ok, source_url, items:[{title,url,info_pratique}], error}
     """
     source_url = f"{BASE}/sortir/l-agenda/tous-les-evenements"
     soup = get_page_soup(source_url)
     if not soup:
-        return _err(source_url, "Agenda inaccessible (timeout ou erreur réseau).")
+        return _err_items(source_url, "Agenda inaccessible (timeout ou erreur réseau).")
 
     items: list[dict[str, Any]] = []
-    seen = set()
+    seen: set[str] = set()
 
-    # Heuristique: les liens d'event contiennent souvent /sortir/l-agenda/ ou /evenement/
-    candidates = soup.select('a[href*="/sortir/l-agenda/"], a[href*="/evenement"], a[href*="/evenements"]')
+    # Heuristique: liens qui ressemblent à des pages d'événements
+    candidates = soup.select(
+        'a[href*="/sortir/l-agenda/"], a[href*="/evenement"], a[href*="/evenements"]'
+    )
 
     for a in candidates:
         href = a.get("href", "")
         if not href:
             continue
+
         url = urljoin(source_url, href)
         if url in seen:
             continue
@@ -338,13 +320,11 @@ def get_upcoming_events(limit: int = 10) -> dict[str, Any]:
         if not title or len(title) < 4:
             continue
 
-        # infos pratiques : souvent près de la carte (parent/next)
         info = None
         parent = a.find_parent(["article", "li", "div"])
         if parent:
-            # Cherche une zone texte proche qui ressemble à date/lieu
             txt = _first_text(parent)
-            if txt and txt != title and len(txt) < 400:
+            if txt and txt != title and len(txt) < 500:
                 info = txt
 
         seen.add(url)
@@ -353,9 +333,8 @@ def get_upcoming_events(limit: int = 10) -> dict[str, Any]:
         if len(items) >= limit:
             break
 
-    # Fallback si pas trouvé
+    # Fallback si la page change
     if not items:
-        # tente une extraction plus large mais contrôlée
         for a in soup.select('a[href^="/"]'):
             href = a.get("href", "")
             if "/agenda" not in href and "even" not in href:
@@ -372,26 +351,3 @@ def get_upcoming_events(limit: int = 10) -> dict[str, Any]:
                 break
 
     return _ok_items(source_url, items)
-
-
-# ==============================================================================
-# BANC D'ESSAI
-# ==============================================================================
-if __name__ == "__main__":
-    print("--- DÉBUT DES TESTS DES OUTILS DE SCRAPING ---")
-
-    print("\n[TEST 1] Recherche de 'musée'...")
-    res_search = search_site("musée", limit=10)
-    print(json.dumps(res_search, indent=2, ensure_ascii=False))
-
-    if res_search.get("ok") and res_search.get("items"):
-        first_url = res_search["items"][0]["url"]
-        print(f"\n[TEST 2] Détails pour : {first_url} ...")
-        res_details = get_place_details(first_url)
-        print(json.dumps(res_details, indent=2, ensure_ascii=False))
-
-    print("\n[TEST 3] Événements (agenda)...")
-    res_agenda = get_upcoming_events(limit=10)
-    print(json.dumps(res_agenda, indent=2, ensure_ascii=False))
-
-    print("\n--- FIN DES TESTS ---")
