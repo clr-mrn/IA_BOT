@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function ImageCarousel({ slides, interval = 4000 }) {
+export default function ImageCarousel({ slides, interval = 6000 }) {
   const [index, setIndex] = useState(0);
 
   // Défilement automatique

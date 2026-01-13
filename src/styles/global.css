@@ -4,8 +4,16 @@ body { margin:0; background: white; color:black; font-family:system-ui; }
 .links a { margin-right:12px; }
 .card { background: darkred; border:1px solid dimgrey; padding:16px; border-radius:16px; margin-top:16px; color: white}
 .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.hero { padding:32px; border:1px solid dimgrey; border-radius:20px; margin-bottom: 40px;}
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+
+  width: 95vw;              /* même largeur que le carrousel */
+  margin-left: 50%;          /* recentrage */
+  transform: translateX(-50%);
+}.hero { padding:32px; border:1px solid dimgrey; border-radius:20px; margin-bottom: 40px;}
 
 /* Header global */
 .nav {
@@ -30,7 +38,8 @@ body { margin:0; background: white; color:black; font-family:system-ui; }
 /* Logo */
 .brand {
   font-weight: 800;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-size: 30px;
 }
 
 /* Barre d’onglets */
@@ -114,16 +123,18 @@ body { margin:0; background: white; color:black; font-family:system-ui; }
   color: #4b5563;
 }
 
-/* Carousel */
+/* Carousel container */
 .carousel {
   position: relative;
-  width: 100%;
-  height: 420px;
-  margin-top: 32px;
-  border-radius: 24px;
+  width: 95vw;          /* prend toute la largeur de l'écran */
+  height: 350px;         /* hauteur réduite */
+  margin-left: 50%;
+  transform: translateX(-50%); /* permet de dépasser les containers centrés */
+  border-radius: 16px;
   overflow: hidden;
 }
 
+/* Slide */
 .carousel-slide {
   width: 100%;
   height: 100%;
@@ -132,26 +143,30 @@ body { margin:0; background: white; color:black; font-family:system-ui; }
   transition: background-image 0.6s ease;
 }
 
+/* Overlay (titre + texte) */
 .carousel-overlay {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  padding: 24px;
+  padding: 20px;
   background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
   color: white;
 }
 
 .carousel-overlay h2 {
   margin: 0;
-  font-size: 28px;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .carousel-overlay p {
   margin-top: 6px;
-  max-width: 500px;
+  max-width: 450px;
+  font-size: 14px;
 }
 
-/* Boutons */
+/* Navigation buttons */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -159,11 +174,14 @@ body { margin:0; background: white; color:black; font-family:system-ui; }
   background: rgba(0,0,0,0.45);
   color: white;
   border: none;
-  font-size: 32px;
-  width: 44px;
-  height: 44px;
+  font-size: 28px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-btn.left { left: 16px; }
@@ -173,4 +191,25 @@ body { margin:0; background: white; color:black; font-family:system-ui; }
   background: rgba(0,0,0,0.7);
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel {
+    height: 250px;      /* encore plus petit sur mobile */
+    border-radius: 12px;
+  }
+
+  .carousel-overlay h2 {
+    font-size: 18px;
+  }
+
+  .carousel-overlay p {
+    font-size: 13px;
+  }
+
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+  }
+}
 

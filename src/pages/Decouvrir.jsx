@@ -44,9 +44,6 @@ export default function Decouvrir() {
 
   return (
     <section className="page">
-      <h1>Découvrir Lyon</h1>
-      <p>Explorez les quartiers et lieux emblématiques de la ville.</p>
-
       <ImageCarousel slides={slides} />
     </section>
   );
