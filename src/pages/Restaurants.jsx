@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import data from "/backend/data/kb.json";
+import defaultRestaurantImg from "../assets/images/restaurant_defaut.jpg";
 
 export default function Restaurants() {
   // 1. On filtre uniquement les restaurants
@@ -76,7 +77,7 @@ export default function Restaurants() {
       {/* Boutons de thèmes */}
       <div className="tags">
         {themes.map(t => {
-          const label = t.charAt(0).toUpperCase() + t.slice(1); // majuscule
+          const label = t.charAt(0).toUpperCase() + t.slice(1);
           return (
             <button
               key={t}
@@ -94,9 +95,12 @@ export default function Restaurants() {
         {filteredRestaurants.map(r => (
           <div key={r.id} className="restaurant-card">
 
-            {/* Carrousel d’images */}
+            {/* Image avec fallback */}
             <div className="carousel">
-              <img src={`/images/restaurants/${r.id}.jpg`} alt={r.name} />
+              <img
+                src={r.image || defaultRestaurantImg}
+                alt={r.name}
+              />
             </div>
 
             <h3>{r.name}</h3>
