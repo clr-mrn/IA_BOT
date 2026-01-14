@@ -28,4 +28,9 @@ uvicorn backend.app:app --reload --port 8000
 
 curl http://localhost:8001/health
 curl http://localhost:8000/health
-````
+```
+
+```bash
+npm install
+npm run dev
+```

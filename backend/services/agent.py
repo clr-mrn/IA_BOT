@@ -29,6 +29,7 @@ Schémas d'arguments (obligatoires)
 N'utilise jamais d'autres noms de champs (ex: "categorie" est interdit).
 
 Périmètre:
+- Tu ne dois répondre qu'aux questions qui concernent les restaurants, musées, parcs et patrimoines. Si la question n'est pas sur ces sujets tu dois recentrer la conversation, et préciser les sujets sur les quels tu peux appoerter une réponse pertinente.
 - Tu es spécialisé UNIQUEMENT sur Lyon.
 - Si l’utilisateur demande une autre ville (ex: Paris), tu refuses poliment et tu proposes de revenir sur Lyon.
 - Dans ce cas, tu n'appelles aucun tool.
@@ -49,11 +50,104 @@ Appels d’outils (format strict)
 }
 
 Réponse finale
-- Si tu ne fais pas de tool-call : commence par "Décision: KB" puis donne la réponse.
-- Si tu as utilisé un tool : commence par "Décision: TOOL" puis donne la réponse.
-- Réponse en français, structurée en puces, concise, et orientée action.
-- Si le tool ne renvoie rien ou échoue : explique-le brièvement et propose une alternative (ex: reformuler, autre catégorie).
+- Réponds en français.
+- Format naturel (comme un chatbot), pas de préfixe “Décision: …”.
+- Si tu as utilisé un tool : utilise uniquement les items du tool, et ne génère pas de JSON.
+- Si tu réponds avec la KB : cite uniquement des lieux présents dans KB_ITEMS.
+- Ne crée jamais de liens : uniquement ceux fournis (KB ou tools).
 """
+
+# --- mots-clés "tourisme / sortie" (large)
+TOURISM_KEYWORDS = {
+    # intention générale
+    "visiter", "visite", "voir", "découvrir", "decouvrir", "faire", "sortir", "idées", "idees",
+    "programme", "itinéraire", "itineraire", "plan", "conseil", "recommandation", "reco",
+    "top", "meilleur", "incontournable", "must", "que faire", "quoi faire",
+
+    # temps / planning
+    "aujourd'hui", "aujourdhui", "demain", "ce soir", "ce midi", "cet après-midi", "cet apres midi",
+    "ce week-end", "ce weekend", "week-end", "weekend", "cette semaine", "la semaine", "samedi", "dimanche",
+    "matin", "après-midi", "apres-midi", "soir", "nuit", "2 jours", "deux jours", "3 jours", "trois jours",
+
+    # catégories culture
+    "musée", "musee", "musées", "musees", "expo", "exposition", "expositions", "galerie",
+    "théâtre", "theatre", "spectacle", "cinéma", "cinema", "opéra", "opera",
+    "concert", "festival", "événement", "evenement", "événements", "evenements", "agenda",
+
+    # manger / boire
+    "restaurant", "resto", "bouchon", "brasserie", "bar", "pub", "café", "cafe", "terrasse",
+    "manger", "bouffer", "déjeuner", "dejeuner", "dîner", "diner", "goûter", "gouter",
+    "petit-dej", "petit dej", "petit déjeuner", "petit dejeuner",
+    "menu", "carte", "réserver", "reserver", "apéro", "apero", "cocktail", "bière", "biere",
+    "végétarien", "vegetarien", "vegan", "halal", "sans gluten",
+
+    # balades / nature
+    "balade", "promenade", "rando", "randonnée", "randonnee", "marche", "courir",
+    "parc", "jardin", "forêt", "foret", "nature", "point de vue", "coucher de soleil",
+    "quais", "berges", "rive", "pont",
+
+    # shopping / loisirs
+    "shopping", "boutique", "marché", "marche", "brocante", "vide-grenier", "vide grenier",
+    "loisir", "activité", "activite", "escape game", "bowling", "patinoire",
+
+    # patrimoine / architecture
+    "patrimoine", "monument", "basilique", "cathédrale", "cathedrale", "église", "eglise",
+    "place", "rue", "quartier", "traboule", "fourvière", "fourviere", "vieux-lyon", "vieux lyon",
+    "histoire", "architecture",
+
+    # transport / accès (utile même si tu ne scrapes pas)
+    "y aller", "comment aller", "accès", "acces", "transport", "métro", "metro", "tram", "bus",
+    "vélo", "velo", "parking",
+
+    # infos variables (déclenchement tool éventuel)
+    "adresse", "horaires", "horaire", "ouverture", "ouvert", "fermé", "ferme",
+    "tarif", "tarifs", "prix", "billet", "tickets", "réservation", "reservation"
+}
+
+# --- mots-clés "Lyon / zones" (large)
+LYON_KEYWORDS = {
+    "lyon", "grand lyon", "métropole", "metropole",
+
+    # quartiers / lieux connus
+    "presqu'île", "presquile", "vieux-lyon", "vieux lyon", "croix-rousse", "croix rousse",
+    "confluence", "part-dieu", "part dieu", "bellecour", "terreaux", "hotel de ville",
+    "fourvière", "fourviere", "saône", "saone", "rhône", "rhone", "tête d'or", "tete d'or",
+    "guillotière", "guillotiere", "brotteaux", "monplaisir", "gerland", "vaise", "perrache",
+    "saint-jean", "saint paul", "saint-georges", "saint georges", "caluire", "villeurbanne",
+    "oullins", "bron", "venissieux", "vaulx-en-velin", "vaulx", "decines", "meyzieu",
+
+    # grandes institutions (tu peux en ajouter)
+    "musée des confluences", "musee des confluences",
+    "musée des beaux-arts", "musee des beaux-arts",
+    "parc de la tête d'or", "parc tete d'or",
+}
+
+# regexs utiles
+ARR_RE = re.compile(r"\b(1er|2e|3e|4e|5e|6e|7e|8e|9e)\b|\b([1-9])\s*(?:eme|ème)\b", re.IGNORECASE)
+DATE_HINT_RE = re.compile(r"\b(aujourd|demain|ce\s+week|week[- ]end|samedi|dimanche)\b", re.IGNORECASE)
+
+def _norm(s: str) -> str:
+    s = s.lower().strip()
+    s = re.sub(r"\s+", " ", s)
+    return s
+
+def _contains_any(needle_set: set[str], text: str) -> bool:
+    # on teste présence substring (suffisant et rapide)
+    return any(k in text for k in needle_set)
+
+def _is_lyon_context(text: str) -> bool:
+    # Lyon explicite, ou arrondissement, ou un mot-clé quartier
+    return ("lyon" in text) or bool(ARR_RE.search(text)) or _contains_any(LYON_KEYWORDS, text)
+
+def _is_tourism_request(text: str) -> bool:
+    # question tourisme = mots-clés tourisme OU mots-clés lyon (quartier) + formulation de demande
+    if _contains_any(TOURISM_KEYWORDS, text):
+        return True
+    # ex: "dans le 6e" (sans dire musée) -> on veut quand même traiter comme tourisme
+    if _is_lyon_context(text) and any(w in text for w in ["dans", "à", "au", "aux", "vers", "près", "proche"]):
+        return True
+    return False
+
 
 _CITY_HINT = re.compile(r"\b(?:a|à|au|aux|sur|dans)\s+([A-ZÉÈÊËÀÂÎÏÔÙÛÜÇ][A-Za-zÉÈÊËÀÂÎÏÔÙÛÜÇ\-']{2,})\b")
 
@@ -80,6 +174,49 @@ def _needs_live_data(msg: str) -> bool:
         "aujourd", "ce week", "ce weekend", "ce week-end", "demain"
     ])
 
+_DECISION_RE = re.compile(r"^\s*d[ée]cision\s*:\s*\w+\s*\n*", re.IGNORECASE)
+
+def _strip_decision_prefix(text: str) -> str:
+    if not text:
+        return ""
+    return _DECISION_RE.sub("", text.strip()).strip()
+
+def _looks_like_tool_json(text: str) -> bool:
+    # Détecte si le modèle a renvoyé un tool-call JSON en plein texte
+    if not text:
+        return False
+    t = text.strip()
+    if not (t.startswith("{") and t.endswith("}")):
+        return False
+    return '"tool"' in t and '"args"' in t
+
+
+_SMALL_TALK = re.compile(
+    r"\b("
+    r"salut|hello|hey|yo|coucou|bonsoir|bonjour|ça va|ca va|merci|"
+    r"mdr|ok|d'accord|super|nickel|parfait|bye|au revoir"
+    r")\b",
+    re.IGNORECASE
+)
+
+def _is_small_talk(msg: str) -> bool:
+    m = msg.strip().lower()
+    if len(m) <= 20 and _SMALL_TALK.search(m):
+        return True
+    # messages ultra courts typiques
+    return m in {"salut", "bonjour", "bonsoir", "merci", "ok", "daccord", "d'accord", "hello", "bye"}
+
+def _small_talk_answer(msg: str) -> str:
+    m = msg.strip().lower()
+    if "merci" in m:
+        return "Avec plaisir."
+    if any(w in m for w in ["salut", "bonjour", "bonsoir", "hello", "coucou", "hey"]):
+        return "Salut ! Je peux t’aider à trouver des idées de sorties à Lyon. Tu veux plutôt musées, restaurants, parcs ou patrimoine ?"
+    if any(w in m for w in ["bye", "au revoir"]):
+        return "À bientôt ! Si tu reviens, dis-moi ce que tu veux faire à Lyon"
+    return "Je suis là pour t'aider à trouver des activités à faire à lyon. Dis moi ce que tu recherches"
+
+
 class Agent:
     def __init__(self):
         self.kb = KnowledgeBase()
@@ -101,6 +238,30 @@ class Agent:
 
         history = self.memory.get(conversation_id, [])
 
+        # 0) Small talk -> réponse directe, sans KB, sans LLM, sans tools
+        if _is_small_talk(user_message):
+            ms = int((time.time() - t0) * 1000)
+            answer = _small_talk_answer(user_message)
+
+            history = history + [
+                {"role": "user", "content": user_message},
+                {"role": "assistant", "content": answer},
+            ]
+            self.memory[conversation_id] = history[-12:]
+
+            return {
+                "answer": answer,
+                "sources": [],
+                "trace": {
+                    "kb_used": False,
+                    "tool_called": None,
+                    "model": self.ollama.model,
+                    "latency_ms": ms,
+                    "steps": ["small_talk"],
+                    "errors": {},
+                },
+            }
+
         city = _extract_city_hint(user_message)
 
         # Si l'utilisateur mentionne une ville explicite et que ce n'est pas Lyon -> on refuse
@@ -108,7 +269,6 @@ class Agent:
             ms = int((time.time() - t0) * 1000)
             return {
                 "answer": (
-                    "Décision: KB\n"
                     f"Je suis spécialisé sur le tourisme à Lyon (données visiterlyon.com). "
                     f"Je ne peux pas répondre de manière fiable pour {city}.\n\n"
                     "Si tu veux, je peux te proposer des idées à Lyon (musées, activités, événements)."
@@ -123,44 +283,67 @@ class Agent:
                     "errors": {},
                 },
             }
+        
+        txt = _norm(user_message)
+
+        # 0bis) on ne traite que ce qui ressemble au tourisme / sorties à Lyon
+        if not _is_tourism_request(txt):
+            answer = (
+                "Je peux t’aider surtout pour organiser des sorties à Lyon "
+                "(musées, restos, balades, patrimoine, événements). "
+                "Tu cherches quoi ?"
+            )
+            history = history + [{"role": "user", "content": user_message}, {"role": "assistant", "content": answer}]
+            self.memory[conversation_id] = history[-12:]
+            ms = int((time.time() - t0) * 1000)
+
+            return {
+                "answer": answer,
+                "sources": [],
+                "trace": {
+                    "kb_used": False,
+                    "tool_called": None,
+                    "model": self.ollama.model,
+                    "latency_ms": ms,
+                    "steps": ["allowlist_block"],
+                    "errors": {},
+                },
+            }
+
 
 
         # --- KB search (optionnel, mais utile)
         steps.append("kb_search")
         kb_hits = self.kb.search(user_message)
-
         kb_items = kb_hits.get("items", []) or []
         have_kb_answer = len(kb_items) > 0
         need_live = _needs_live_data(user_message)
 
-        # PRIORITÉ KB : si on a des items ET pas besoin d'infos variables -> réponse directe sans LLM
         if have_kb_answer and not need_live:
-            lines = ["Décision: KB"]
-            for it in kb_items[:8]:
-                name = it.get("name") or it.get("title") or "Lieu"
-                url = it.get("url")
-                if url:
-                    lines.append(f"* {name} : {url}")
-                    sources.append({"type": "web", "url": url})
+            steps.append("kb_direct_answer")
+            lines = ["Voici quelques idées :"]
+            for it in kb_items:
+                if it.get("url"):
+                    lines.append(f"* {it['name']} : {it['url']}")
                 else:
-                    lines.append(f"* {name}")
+                    lines.append(f"* {it['name']}")
 
             answer = "\n".join(lines)
-
-            # update mémoire
-            history = history + [{"role": "user", "content": user_message}, {"role": "assistant", "content": answer}]
-            self.memory[conversation_id] = history[-12:]
-
-            ms = int((time.time() - t0) * 1000)
+            answer = _strip_decision_prefix(answer)
+            
             return {
                 "answer": answer,
-                "sources": sources,
+                "sources": [
+                    {"type": "web", "url": it["url"]}
+                    for it in kb_items
+                    if it.get("url")
+                ],
                 "trace": {
                     "kb_used": True,
                     "tool_called": None,
                     "model": self.ollama.model,
-                    "latency_ms": ms,
-                    "steps": steps + ["kb_direct_answer"],
+                    "latency_ms": int((time.time() - t0) * 1000),
+                    "steps": steps,
                     "errors": {},
                 },
             }
@@ -189,7 +372,7 @@ class Agent:
 IMPORTANT:
 - {"Tu DOIS répondre UNIQUEMENT avec la KB ci-dessus et tu N'APPELLES AUCUN tool." if force_no_tool else "Tu peux appeler un tool uniquement si nécessaire."}
 - Si tu appelles un tool, réponds UNIQUEMENT avec le JSON tool-call.
-- Sinon, réponds directement et commence par "Décision: KB".
+- Sinon, réponds directement.
 - Si tu réponds avec la KB: tu cites UNIQUEMENT des lieux présents dans KB_ITEMS.
 - Pour chaque lieu: affiche "name : url".
 - Si aucun item ne correspond exactement (ex: 6ème), dis-le et propose des alternatives.
@@ -203,7 +386,7 @@ IMPORTANT:
         except Exception as e:
             ms = int((time.time() - t0) * 1000)
             return {
-                "answer": "Décision: KB\nDésolé, le modèle IA est indisponible (Ollama).",
+                "answer": "Désolé, le modèle IA est indisponible (Ollama).",
                 "sources": sources,
                 "trace": {
                     "kb_used": have_kb_answer,
@@ -218,7 +401,7 @@ IMPORTANT:
         if not out1 or not out1.strip():
             ms = int((time.time() - t0) * 1000)
             return {
-                "answer": "Décision: KB\nDésolé, je n'ai pas réussi à générer une réponse.",
+                "answer": "Désolé, je n'ai pas réussi à générer une réponse.",
                 "sources": sources,
                 "trace": {
                     "kb_used": have_kb_answer,
@@ -229,8 +412,19 @@ IMPORTANT:
                     "errors": {},
                 },
             }
+        
+        out1 = _strip_decision_prefix(out1)
 
         tool_call = parse_tool_call_loose(out1)
+                # Si le modèle renvoie un JSON tool-call mais qu'on force_no_tool -> on l'ignore
+        if force_no_tool:
+            tool_call = None
+
+        # Si le modèle renvoie un JSON tool-call brut (et parse_tool_call_loose échoue),
+        # on évite de renvoyer ça au front
+        if tool_call is None and _looks_like_tool_json(out1):
+            out1 = "Je peux t’aider là-dessus, mais j’ai besoin que tu précises un peu (type de lieu, quartier, ou ce que tu veux exactement)."
+
 
         # Priorité KB : interdit tool si KB suffit et pas besoin de live data
         if force_no_tool:
@@ -263,13 +457,6 @@ IMPORTANT:
             except Exception as e:
                 tool_payload = {"error": str(e)}
                 steps.append("tool_error")
-                # si le tool renvoie des URLs, tu peux les exposer comme sources
-                for it in (tool_payload.get("items") or []):
-                    if isinstance(it, dict) and it.get("url"):
-                        sources.append({"type": "web", "url": it["url"]})
-            except Exception as e:
-                tool_payload = {"error": str(e)}
-                steps.append("tool_error")
 
             # --- PASS 2 : on redonne résultat tool au modèle → réponse finale
             steps.append("llm_pass2")
@@ -282,7 +469,6 @@ Résultat du tool ({tool_called}) (JSON):
 
 Tâche:
 - Produis UNIQUEMENT la réponse finale pour l'utilisateur.
-- Commence par "Décision: TOOL".
 - NE PRODUIS AUCUN JSON.
 - NE FAIS AUCUN appel de tool.
 - Utilise UNIQUEMENT les éléments de tool_payload.items.
@@ -296,15 +482,13 @@ Tâche:
                 answer = await self.ollama.generate(prompt=prompt2, system=SYSTEM_PROMPT)
             except Exception as e:
                 answer = (
-                    "Décision: TOOL\n"
-                    "Le tool a été exécuté mais le modèle IA est indisponible pour formuler la réponse. "
+                    "Le modèle IA est indisponible pour formuler la réponse. "
                     "Réessaie dans un instant."
                 )
                 steps.append("ollama_error_pass2")
                 # Note: on met l'erreur dans le trace
                 err2 = str(e)
         else:
-            # --- Réponse directe
             steps.append("final_from_pass1")
             answer = out1
 
@@ -335,5 +519,6 @@ Tâche:
                 used_urls.add(s["url"])
         sources = [s for s in sources if s.get("type") != "web" or s.get("url") in used_urls]
 
+        answer = _strip_decision_prefix(answer)
 
         return {"answer": answer, "sources": sources, "trace": trace}
