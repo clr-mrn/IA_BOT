@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Hero from "../components/ui/Hero";
 import FeatureCard from "../components/ui/FeatureCard";
 import ImageCarousel from "../components/ui/ImageCarousel";
@@ -17,68 +18,64 @@ import presquile from "../assets/images/presquile.jpg";
 
 export default function Home() {
   const slides = [
-    {
-      title: "Vieux-Lyon",
-      description: "Ruelles pavées, traboules et architecture Renaissance.",
-      image: vieuxLyon,
-    },
-    {
-      title: "Fourvière",
-      description: "Basilique emblématique et vue panoramique sur la ville.",
-      image: fourviere,
-    },
-    {
-      title: "Croix-Rousse",
-      description: "Quartier des Canuts, artistique et vivant.",
-      image: croixRousse,
-    },
-    {
-      title: "Parc de la Tête d’Or",
-      description: "Le poumon vert de Lyon, idéal pour se détendre.",
-      image: teteOr,
-    },
-    {
-      title: "Confluence",
-      description: "Architecture moderne et Musée des Confluences.",
-      image: confluence,
-    },
-    {
-      title: "Presqu’île",
-      description: "Cœur commerçant et historique de Lyon.",
-      image: presquile,
-    },
+    { title: "Vieux-Lyon", description: "Ruelles pavées, traboules et architecture Renaissance.", image: vieuxLyon },
+    { title: "Fourvière", description: "Basilique emblématique et vue panoramique sur la ville.", image: fourviere },
+    { title: "Croix-Rousse", description: "Quartier des Canuts, artistique et vivant.", image: croixRousse },
+    { title: "Parc de la Tête d’Or", description: "Le poumon vert de Lyon, idéal pour se détendre.", image: teteOr },
+    { title: "Confluence", description: "Architecture moderne et Musée des Confluences.", image: confluence },
+    { title: "Presqu’île", description: "Cœur commerçant et historique de Lyon.", image: presquile },
   ];
 
   return (
-
     <>
+      {/* CARROUSEL */}
       <section id="decouvrir" className="page">
         <ImageCarousel slides={slides} />
       </section>
 
+      {/* BLOC INTRO IA */}
+      <section className="ai-intro">
+        <h2 className="ai-title">
+          Vous voulez découvrir Lyon ? <br />
+          Programmez votre week‑end avec l’assistant IA.
+        </h2>
+
+        <button
+          className="ai-start-btn"
+          onClick={() => window.openChat()}
+        >
+          Commencez
+        </button>
+      </section>   {/* ← ICI : la section est maintenant fermée */}
 
       {/* SECTION 2 — CARTES */}
       <section className="grid3">
-        <FeatureCard
-          title="Incontournables"
-          text="Vieux-Lyon, Fourvière, Presqu’île."
-          imageSrc={imgIncontournables}
-          alt="Vue de Lyon et monuments"
-        />
+        <Link to="/decouvertes" className="card-link">
+          <FeatureCard
+            title="Incontournables"
+            text="Vieux-Lyon, Fourvière, Presqu’île."
+            imageSrc={imgIncontournables}
+            alt="Vue de Lyon et monuments"
+          />
+        </Link>
 
-        <FeatureCard
-          title="Gastronomie"
-          text="Bouchons lyonnais et spécialités locales."
-          imageSrc={imgGastronomie}
-          alt="Plat typique lyonnais"
-        />
+        <Link to="/restaurants" className="card-link">
+          <FeatureCard
+            title="Gastronomie"
+            text="Bouchons lyonnais et spécialités locales."
+            imageSrc={imgGastronomie}
+            alt="Plat typique lyonnais"
+          />
+        </Link>
 
-        <FeatureCard
-          title="Culture et découvertes"
-          text="Parc de la Tête d’Or, quais, musées."
-          imageSrc={imgNature}
-          alt="Parc et nature à Lyon"
-        />
+        <Link to="/culture" className="card-link">
+          <FeatureCard
+            title="Culture et découvertes"
+            text="Parc de la Tête d’Or, quais, musées."
+            imageSrc={imgNature}
+            alt="Parc et nature à Lyon"
+          />
+        </Link>
       </section>
     </>
   );
