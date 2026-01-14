@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import MessageList from "./MessageList";
 import ChatInput from "./ChatInput";
+import { sendChatMessage } from "../../api/chatApi";
 
 const SUGGESTIONS = [
   "Que faire à Lyon en 2 jours ?",
@@ -8,20 +9,6 @@ const SUGGESTIONS = [
   "Un bouchon sympa dans le Vieux-Lyon ?"
 ];
 
-function mockBotAnswer(userText) {
-  const t = userText.toLowerCase();
-
-  if (t.includes("2 jours") || t.includes("deux jours")) {
-    return "Idée 2 jours : Jour 1 (Vieux-Lyon, traboules, Fourvière). Jour 2 (Tête d’Or, Croix-Rousse, Confluence). Tu veux un itinéraire détaillé ?";
-  }
-  if (t.includes("bouchon") || t.includes("restaurant")) {
-    return "Pour un bouchon : vise le Vieux-Lyon ou Presqu’île. Dis-moi ton budget et le quartier, je te propose 2-3 options.";
-  }
-  if (t.includes("balade") || t.includes("quais") || t.includes("promenade")) {
-    return "Balade sympa : quais du Rhône au coucher du soleil + arrêt à la Guillotière / Bellecour. Tu préfères plutôt nature ou ville ?";
-  }
-  return "Je peux t’aider à organiser ta visite : quartiers, itinéraires, restos, transports. Tu cherches quoi exactement ?";
-}
 
 export default function ChatWidget({ onClose }) {
   const [messages, setMessages] = useState([
@@ -42,20 +29,32 @@ export default function ChatWidget({ onClose }) {
     el.scrollTop = el.scrollHeight;
   }, [messages, typing]);
 
-  function handleSend(text) {
+  async function handleSend(text) {
     const userMsg = { role: "user", content: text };
 
     setMessages((prev) => [...prev, userMsg]);
     setTyping(true);
     setInputDisabled(true);
 
-    // Simule une réponse (sans backend)
-    setTimeout(() => {
-      const reply = mockBotAnswer(text);
+    try {
+      const data = await sendChatMessage(text);
+      const reply = (data?.answer && String(data.answer).trim()) || "Je n’ai pas de réponse.";
+
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+    } catch (err) {
+      console.error(err);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content:
+            "Oups, je n’arrive pas à contacter le serveur. Vérifie que le backend tourne sur http://localhost:8000.",
+        },
+      ]);
+    } finally {
       setTyping(false);
       setInputDisabled(false);
-    }, 900);
+    }
   }
 
   return (
