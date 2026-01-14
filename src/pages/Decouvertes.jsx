@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InfosPratiques() {
+export default function Decouvertes() {
   return (
     <section className="page">
       <h1>Infos pratiques</h1>
