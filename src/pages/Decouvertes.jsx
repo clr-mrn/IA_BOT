@@ -1,18 +1,31 @@
 import React, { useState, useMemo } from "react";
 import data from "/backend/data/kb.json";
+import defaultParkImg from "../assets/images/parc_defaut.jpg";
 
 const parks = data.places.filter(p => p.type === "park");
 
 export default function Decouvertes() {
   const [selectedTheme, setSelectedTheme] = useState("all");
+  const [search, setSearch] = useState("");
 
-  // Filtrer par thème
+  // Filtrer par thème + recherche
   const filteredParks = useMemo(() => {
-    if (selectedTheme === "all") {
-      return parks;
+    let list = [...parks];
+
+    // Recherche par nom
+    if (search.trim() !== "") {
+      list = list.filter((park) =>
+        park.name.toLowerCase().includes(search.toLowerCase())
+      );
     }
-    return parks.filter((park) => park.themes.includes(selectedTheme));
-  }, [selectedTheme]);
+
+    // Filtre par thème
+    if (selectedTheme !== "all") {
+      list = list.filter((park) => park.themes.includes(selectedTheme));
+    }
+
+    return list;
+  }, [selectedTheme, search]);
 
   // Extraire tous les thèmes uniques
   const allThemes = Array.from(
@@ -22,12 +35,21 @@ export default function Decouvertes() {
   return (
     <div id="decouvrir">
       {/* Hero Section */}
-      <div className="hero">
-        <h1>Découvertes</h1>
-        <p>Explorez les plus beaux parcs et espaces verts de Lyon</p>
+        <h1 style={{ textAlign: "center" }}>Découvertes</h1>
+        <p style={{ textAlign: "center" }}>Explorez les plus beaux parcs et espaces verts de Lyon</p>
+
+              {/* Barre de recherche */}
+      <div className="container">
+        <input
+          type="text"
+          placeholder="Rechercher un parc..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="search-bar"
+        />
       </div>
 
-      {/* Statistiques - EN HAUT */}
+      {/* Statistiques */}
       <div className="container" style={{ textAlign: "center", marginBottom: "40px" }}>
         <div className="grid2">
           <div>
@@ -54,6 +76,7 @@ export default function Decouvertes() {
           >
             Tous ({parks.length})
           </button>
+
           {allThemes.map((theme) => {
             const count = parks.filter((p) => p.themes.includes(theme)).length;
             return (
@@ -69,11 +92,11 @@ export default function Decouvertes() {
         </div>
       </div>
 
-      {/* Contenu principal - Grid */}
+      {/* Contenu principal */}
       <div className="container">
         {filteredParks.length === 0 ? (
           <div style={{ textAlign: "center", padding: "40px 0" }}>
-            <p>Aucun parc trouvé pour ce thème.</p>
+            <p>Aucun parc trouvé.</p>
           </div>
         ) : (
           <div className="grid3">
@@ -86,22 +109,18 @@ export default function Decouvertes() {
                 className="card-link"
               >
                 <div className="feature-card is-visible">
+
                   {/* Image */}
                   <div className="feature-img">
-                    <div
+                    <img
+                      src={defaultParkImg}
+                      alt={park.name}
                       style={{
                         width: "100%",
                         height: "100%",
-                        background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "white",
-                        fontSize: "48px",
+                        objectFit: "cover"
                       }}
-                    >
-                      📍
-                    </div>
+                    />
                   </div>
 
                   {/* Contenu */}
@@ -128,6 +147,7 @@ export default function Decouvertes() {
                           {theme}
                         </span>
                       ))}
+
                       {park.themes.length > 2 && (
                         <span
                           style={{
@@ -143,6 +163,7 @@ export default function Decouvertes() {
                       )}
                     </div>
                   </div>
+
                 </div>
               </a>
             ))}
