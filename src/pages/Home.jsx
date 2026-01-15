@@ -36,9 +36,10 @@ export default function Home() {
       {/* BLOC INTRO IA */}
       <section className="ai-intro">
         <h2 className="ai-title">
-          Vous voulez découvrir Lyon ? <br />
-          Programmez votre week‑end avec l’assistant IA.
+          Vous voulez découvrir Lyon ?
         </h2>
+
+        <h2 classname="ai-title">Programmez votre week‑end avec l’assistant IA.</h2>
 
         <button
           className="ai-start-btn"
@@ -56,6 +57,7 @@ export default function Home() {
             text="Vieux-Lyon, Fourvière, Presqu’île."
             imageSrc={imgIncontournables}
             alt="Vue de Lyon et monuments"
+            showLinkButton={false}
           />
         </Link>
 
@@ -65,6 +67,7 @@ export default function Home() {
             text="Bouchons lyonnais et spécialités locales."
             imageSrc={imgGastronomie}
             alt="Plat typique lyonnais"
+            showLinkButton={false}
           />
         </Link>
 
@@ -74,6 +77,7 @@ export default function Home() {
             text="Parc de la Tête d’Or, quais, musées."
             imageSrc={imgNature}
             alt="Parc et nature à Lyon"
+            showLinkButton={false}
           />
         </Link>
       </section>

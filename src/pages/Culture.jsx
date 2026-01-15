@@ -215,8 +215,9 @@ const Culture = () => {
                   key={`${theme}-${place.id}`}
                   title={place.name}
                   text={place.short_description}
-                  imageSrc={defaultCultureImg}
+                  imageSrc={place.image_url || place.image || defaultCultureImg}
                   alt={place.name}
+                  link={place.url}
                 />
               ))}
 </div>

@@ -40,31 +40,6 @@
       "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/4/8/4/744849-1-fre-FR/866a28f4e95e-MHL-musee-gadagne_Sabine-Serrad.jpg"
     },
     {
-      "id": "museum_004",
-      "name": "Musée d’Art Contemporain de Lyon",
-      "type": "museum",
-      "district": "6e arrondissement",
-      "themes": [
-        "art contemporain"
-      ],
-      "short_description": "Musée dédié à la création artistique contemporaine.",
-      "url": "https://www.visiterlyon.com/",
-      "image_url": null
-    },
-    {
-      "id": "museum_005",
-      "name": "Musée de l’Imprimerie",
-      "type": "museum",
-      "district": "Presqu'île",
-      "themes": [
-        "histoire",
-        "imprimerie"
-      ],
-      "short_description": "Musée retraçant l’histoire de l’imprimerie et du livre.",
-      "url": "https://www.visiterlyon.com/",
-      "image_url": null
-    },
-    {
       "id": "museum_006",
       "name": "Musée Lumière",
       "type": "museum",
@@ -89,6 +64,426 @@
       "short_description": "Musée consacré aux textiles et aux arts décoratifs.",
       "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-des-tissus",
       "image_url": "https://media.lyon-france.com/1600x600/193455/8711216.jpg"
+    },
+    {
+      "id": "museum_011",
+      "name": "Musée Jean Couty",
+      "type": "museum",
+      "district": "9e arrondissement",
+      "themes": [
+        "peinture"
+      ],
+      "short_description": "Musée consacré à l’œuvre du peintre Jean Couty.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-jean-couty",
+      "image_url": "https://media.lyon-france.com/1600x600/2996254/28283884.jpg"
+    },
+    {
+      "id": "museum_015",
+      "name": "Musée Africain de Lyon",
+      "type": "museum",
+      "district": "7e arrondissement",
+      "themes": [
+        "cultures",
+        "ethnographie"
+      ],
+      "short_description": "Musée dédié aux cultures africaines.",
+      "url": "https://www.visiterlyon.com/sortir/l-agenda",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
+    },
+    {
+      "id": "museum_017",
+      "name": "Maison des Canuts",
+      "type": "museum",
+      "district": "Croix-Rousse",
+      "themes": [
+        "soie",
+        "artisanat"
+      ],
+      "short_description": "Musée dédié à l’histoire des canuts et de la soie.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/maison-des-canuts",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/4/5/9/1/841954-1-fre-FR/313248fb04ad-Maison-des-Canuts-tissage.jpg"
+    },
+    {
+      "id": "museum_018",
+      "name": "Musée Urbain Tony Garnier",
+      "type": "museum",
+      "district": "8e arrondissement",
+      "themes": [
+        "architecture",
+        "urbanisme"
+      ],
+      "short_description": "Musée à ciel ouvert dédié à l’architecte Tony Garnier.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/cite-musee-tony-garnier",
+      "image_url": "https://media.lyon-france.com/1600x600/168447/32121237.jpg"
+    },
+    {
+      "id": "museum_021",
+      "name": "Institut Lumière",
+      "type": "museum",
+      "district": "Monplaisir",
+      "themes": [
+        "cinéma"
+      ],
+      "short_description": "Lieu culturel consacré au cinéma.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/artisans-d-art-galeries/galerie-cinema-2-institut-lumiere",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.766412&lng=4.834784"
+    },
+    {
+      "id": "heritage_005",
+      "name": "Traboules de la Croix-Rousse",
+      "type": "heritage",
+      "district": "Croix-Rousse",
+      "themes": [
+        "soie",
+        "architecture"
+      ],
+      "short_description": "Réseau de passages utilisé par les canuts.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/la-maison-des-canuts-et-les-traboules-de-la-croix-rousse",
+      "image_url": "https://media.lyon-france.com/1600x600/5326494/35946425.jpg"
+    },
+    {
+      "id": "heritage_006",
+      "name": "Hôtel de Ville de Lyon",
+      "type": "heritage",
+      "district": "Presqu'île",
+      "themes": [
+        "institution",
+        "architecture"
+      ],
+      "short_description": "Bâtiment historique de la place des Terreaux.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/les-salons-de-l-hotel-de-ville-de-lyon",
+      "image_url": "https://media.lyon-france.com/1600x600/119929/11167942.png"
+    },
+    {
+      "id": "heritage_007",
+      "name": "Place Bellecour",
+      "type": "heritage",
+      "district": "Presqu'île",
+      "themes": [
+        "place",
+        "symbole"
+      ],
+      "short_description": "Grande place emblématique du centre de Lyon.",
+      "url": "https://www.visiterlyon.com/sortir/l-agenda/fetes/grande-roue-de-la-place-bellecour",
+      "image_url": "https://media.lyon-france.com/1600x600/409331/28339827.jpg"
+    },
+    {
+      "id": "heritage_009",
+      "name": "Opéra National de Lyon",
+      "type": "heritage",
+      "district": "Presqu'île",
+      "themes": [
+        "culture",
+        "architecture"
+      ],
+      "short_description": "Opéra moderne intégré dans un bâtiment historique.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/les-coulisses-de-l-opera-national-de-lyon",
+      "image_url": "https://media.lyon-france.com/1600x600/119855/12655614.jpg"
+    },
+    {
+      "id": "heritage_023",
+      "name": "Aqueducs romains de Lyon",
+      "type": "heritage",
+      "district": "Agglomération",
+      "themes": [
+        "antiquité",
+        "ingénierie"
+      ],
+      "short_description": "Vestiges des aqueducs alimentant Lugdunum.",
+      "url": "https://www.visiterlyon.com/sortir/l-agenda",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
+    },
+    {
+      "id": "heritage_024",
+      "name": "Cimetière de Loyasse",
+      "type": "heritage",
+      "district": "Fourvière",
+      "themes": [
+        "mémoire",
+        "histoire"
+      ],
+      "short_description": "Cimetière historique avec vue sur la ville.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/2/7/8/4/684872-2-fre-FR/2c8267526bf3-_copyright-Quentin-Lafont-musee-des-Confluences.jpg"
+    },
+    {
+      "id": "heritage_026",
+      "name": "Fresque des Lyonnais",
+      "type": "heritage",
+      "district": "Presqu'île",
+      "themes": [
+        "street art",
+        "histoire"
+      ],
+      "short_description": "Mur peint représentant des figures lyonnaises.",
+      "url": "https://www.visiterlyon.com/sortir/l-agenda",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
+    },
+    {
+      "id": "heritage_028",
+      "name": "Halles Paul Bocuse",
+      "type": "heritage",
+      "district": "3e arrondissement",
+      "themes": [
+        "gastronomie"
+      ],
+      "short_description": "Marché couvert emblématique de la gastronomie lyonnaise.",
+      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/adresses-gourmandes/chocolaterie-patisserie-seve-halles-paul-bocuse",
+      "image_url": "https://media.lyon-france.com/1600x600/175410/26871686.jpg"
+    },
+    {
+      "id": "park_002",
+      "name": "Parc de Gerland",
+      "type": "park",
+      "district": "7e arrondissement",
+      "themes": [
+        "nature",
+        "promenade"
+      ],
+      "short_description": "Parc contemporain au sud de Lyon, le long du Rhône.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-gerland",
+      "image_url": "https://media.lyon-france.com/1600x600/185167/21587086.jpg"
+    },
+    {
+      "id": "park_003",
+      "name": "Parc de la Feyssine",
+      "type": "park",
+      "district": "Villeurbanne",
+      "themes": [
+        "nature",
+        "fleuve"
+      ],
+      "short_description": "Espace naturel préservé en bord du Rhône.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-la-feyssine",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/3/3/7/8/778733-1-fre-FR/cea1d04d03d3-villeurbanne-parc-feyssine_GillesMichallet.JPG"
+    },
+    {
+      "id": "park_004",
+      "name": "Parc Sergent Blandan",
+      "type": "park",
+      "district": "7e arrondissement",
+      "themes": [
+        "famille",
+        "loisirs"
+      ],
+      "short_description": "Ancienne caserne transformée en parc urbain.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-blandan",
+      "image_url": "https://media.lyon-france.com/1600x600/131430/680870.jpg"
+    },
+    {
+      "id": "park_005",
+      "name": "Parc des Hauteurs",
+      "type": "park",
+      "district": "Fourvière",
+      "themes": [
+        "panorama",
+        "promenade"
+      ],
+      "short_description": "Parc reliant Fourvière au Vieux Lyon avec vue sur la ville.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-des-hauteurs",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.762823&lng=4.82111"
+    },
+    {
+      "id": "park_006",
+      "name": "Parc de Parilly",
+      "type": "park",
+      "district": "8e arrondissement",
+      "themes": [
+        "sport",
+        "nature"
+      ],
+      "short_description": "Grand parc métropolitain dédié aux activités sportives.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-parilly",
+      "image_url": "https://media.lyon-france.com/1600x600/96656/34041869.jpg"
+    },
+    {
+      "id": "park_008",
+      "name": "Jardin des Curiosités",
+      "type": "park",
+      "district": "5e arrondissement",
+      "themes": [
+        "panorama",
+        "jardin"
+      ],
+      "short_description": "Petit jardin offrant une vue remarquable sur Lyon.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/le-jardin-des-curiosites-lyon-vu-d-en-haut",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/2/3/3/4/744332-1-fre-FR/60f33e3d37fe-1280px-Jardin_des_Curiosites_2.jpg"
+    },
+    {
+      "id": "park_009",
+      "name": "Jardin Rosa Mir",
+      "type": "park",
+      "district": "Croix-Rousse",
+      "themes": [
+        "insolite",
+        "jardin"
+      ],
+      "short_description": "Jardin insolite décoré de mosaïques et coquillages.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/jardin-rosa-mir",
+      "image_url": "https://media.lyon-france.com/1600x600/132399/21172065.jpg"
+    },
+    {
+      "id": "park_010",
+      "name": "Jardin du Musée des Beaux-Arts",
+      "type": "park",
+      "district": "Presqu'île",
+      "themes": [
+        "jardin",
+        "culture"
+      ],
+      "short_description": "Jardin paisible au cœur d’un ancien cloître.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/jardin-du-musee-des-beaux-arts",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.767132&lng=4.833421"
+    },
+    {
+      "id": "park_012",
+      "name": "Berges du Rhône",
+      "type": "park",
+      "district": "Centre-ville",
+      "themes": [
+        "promenade",
+        "fleuve"
+      ],
+      "short_description": "Aménagements piétons le long du Rhône.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-des-berges-du-rhone",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.734224&lng=4.822097"
+    },
+    {
+      "id": "park_014",
+      "name": "Parc Montel",
+      "type": "park",
+      "district": "Caluire-et-Cuire",
+      "themes": [
+        "nature",
+        "famille"
+      ],
+      "short_description": "Parc de quartier calme et verdoyant.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-montel",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.77352&lng=4.79979"
+    },
+    {
+      "id": "park_016",
+      "name": "Parc du Vallon",
+      "type": "park",
+      "district": "9e arrondissement",
+      "themes": [
+        "nature",
+        "détente"
+      ],
+      "short_description": "Parc récent aménagé autour d’un vallon.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-du-vallon",
+      "image_url": "https://media.lyon-france.com/1600x600/140103/9128501.jpg"
+    },
+    {
+      "id": "park_025",
+      "name": "Parc de la Cerisaie",
+      "type": "park",
+      "district": "Croix-Rousse",
+      "themes": [
+        "culture",
+        "jardin"
+      ],
+      "short_description": "Parc culturel accueillant des événements artistiques.",
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-la-cerisaie-parc-chaziere",
+      "image_url": "https://media.lyon-france.com/1600x600/132204/21586827.png"
+    },
+    {
+      "id": "restaurant_005",
+      "name": "Les Halles Paul Bocuse",
+      "type": "restaurant",
+      "district": "3e arrondissement",
+      "themes": [
+        "gastronomie",
+        "marché"
+      ],
+      "short_description": "Temple de la gastronomie lyonnaise.",
+      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/adresses-gourmandes/halles-de-lyon-paul-bocuse",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/0/9/5/755909-1-fre-FR/598be7bc4493-halles-paul-bocuse_Yanis-Ourabah.jpg"
+    },
+    {
+      "id": "restaurant_010",
+      "name": "Brasserie Georges",
+      "type": "restaurant",
+      "district": "Perrache",
+      "themes": [
+        "brasserie"
+      ],
+      "short_description": "Grande brasserie historique de Lyon.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/soierie-saint-georges",
+      "image_url": "https://media.lyon-france.com/1600x600/770253/9664397.jpg"
+    },
+    {
+      "id": "restaurant_016",
+      "name": "Le Musée",
+      "type": "restaurant",
+      "district": "Vieux Lyon",
+      "themes": [
+        "bouchon"
+      ],
+      "short_description": "Bouchon traditionnel au décor atypique.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/ol-le-musee",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.765767&lng=4.981939"
+    },
+    {
+      "id": "restaurant_018",
+      "name": "La Bijouterie",
+      "type": "restaurant",
+      "district": "7e arrondissement",
+      "themes": [
+        "moderne"
+      ],
+      "short_description": "Cuisine créative et originale.",
+      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/mode-et-pret-a-porter/bijouterie-aigue-marine",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.876375&lng=4.839617"
+    },
+    {
+      "id": "restaurant_022",
+      "name": "Les Lyonnais",
+      "type": "restaurant",
+      "district": "Vieux Lyon",
+      "themes": [
+        "bouchon"
+      ],
+      "short_description": "Bouchon labellisé, très apprécié.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/lieux-de-spectacle/les-lyonnais-le-caveau",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.761909&lng=4.826218"
+    },
+    {
+      "id": "restaurant_033",
+      "name": "Les Loges",
+      "type": "restaurant",
+      "district": "Vieux Lyon",
+      "themes": [
+        "gastronomie"
+      ],
+      "short_description": "Restaurant gastronomique dans un cadre Renaissance.",
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/bien-etre/spa-cour-des-loges",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.763334&lng=4.827469"
+    },
+    {
+      "id": "museum_004",
+      "name": "Musée d’Art Contemporain de Lyon",
+      "type": "museum",
+      "district": "6e arrondissement",
+      "themes": [
+        "art contemporain"
+      ],
+      "short_description": "Musée dédié à la création artistique contemporaine.",
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
+    },
+    {
+      "id": "museum_005",
+      "name": "Musée de l’Imprimerie",
+      "type": "museum",
+      "district": "Presqu'île",
+      "themes": [
+        "histoire",
+        "imprimerie"
+      ],
+      "short_description": "Musée retraçant l’histoire de l’imprimerie et du livre.",
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_008",
@@ -130,18 +525,6 @@
       "image_url": null
     },
     {
-      "id": "museum_011",
-      "name": "Musée Jean Couty",
-      "type": "museum",
-      "district": "9e arrondissement",
-      "themes": [
-        "peinture"
-      ],
-      "short_description": "Musée consacré à l’œuvre du peintre Jean Couty.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-jean-couty",
-      "image_url": "https://media.lyon-france.com/1600x600/2996254/28283884.jpg"
-    },
-    {
       "id": "museum_012",
       "name": "Musée des Sapeurs-Pompiers Lyon Rhône",
       "type": "museum",
@@ -181,19 +564,6 @@
       "image_url": null
     },
     {
-      "id": "museum_015",
-      "name": "Musée Africain de Lyon",
-      "type": "museum",
-      "district": "7e arrondissement",
-      "themes": [
-        "cultures",
-        "ethnographie"
-      ],
-      "short_description": "Musée dédié aux cultures africaines.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda",
-      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
-    },
-    {
       "id": "museum_016",
       "name": "Musée d’Art Sacré de Fourvière",
       "type": "museum",
@@ -205,32 +575,6 @@
       "short_description": "Collection d’art religieux et sacré.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "museum_017",
-      "name": "Maison des Canuts",
-      "type": "museum",
-      "district": "Croix-Rousse",
-      "themes": [
-        "soie",
-        "artisanat"
-      ],
-      "short_description": "Musée dédié à l’histoire des canuts et de la soie.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/maison-des-canuts",
-      "image_url": "https://www.visiterlyon.com/var/site/storage/images/4/5/9/1/841954-1-fre-FR/313248fb04ad-Maison-des-Canuts-tissage.jpg"
-    },
-    {
-      "id": "museum_018",
-      "name": "Musée Urbain Tony Garnier",
-      "type": "museum",
-      "district": "8e arrondissement",
-      "themes": [
-        "architecture",
-        "urbanisme"
-      ],
-      "short_description": "Musée à ciel ouvert dédié à l’architecte Tony Garnier.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/cite-musee-tony-garnier",
-      "image_url": "https://media.lyon-france.com/1600x600/168447/32121237.jpg"
     },
     {
       "id": "museum_019",
@@ -256,18 +600,6 @@
       "short_description": "Expositions dédiées à la photographie.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "museum_021",
-      "name": "Institut Lumière",
-      "type": "museum",
-      "district": "Monplaisir",
-      "themes": [
-        "cinéma"
-      ],
-      "short_description": "Lieu culturel consacré au cinéma.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/artisans-d-art-galeries/galerie-cinema-2-institut-lumiere",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.766412&lng=4.834784"
     },
     {
       "id": "museum_022",
@@ -373,45 +705,6 @@
       "image_url": null
     },
     {
-      "id": "heritage_005",
-      "name": "Traboules de la Croix-Rousse",
-      "type": "heritage",
-      "district": "Croix-Rousse",
-      "themes": [
-        "soie",
-        "architecture"
-      ],
-      "short_description": "Réseau de passages utilisé par les canuts.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/la-maison-des-canuts-et-les-traboules-de-la-croix-rousse",
-      "image_url": "https://media.lyon-france.com/1600x600/5326494/35946425.jpg"
-    },
-    {
-      "id": "heritage_006",
-      "name": "Hôtel de Ville de Lyon",
-      "type": "heritage",
-      "district": "Presqu'île",
-      "themes": [
-        "institution",
-        "architecture"
-      ],
-      "short_description": "Bâtiment historique de la place des Terreaux.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/les-salons-de-l-hotel-de-ville-de-lyon",
-      "image_url": "https://media.lyon-france.com/1600x600/119929/11167942.png"
-    },
-    {
-      "id": "heritage_007",
-      "name": "Place Bellecour",
-      "type": "heritage",
-      "district": "Presqu'île",
-      "themes": [
-        "place",
-        "symbole"
-      ],
-      "short_description": "Grande place emblématique du centre de Lyon.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda/fetes/grande-roue-de-la-place-bellecour",
-      "image_url": "https://media.lyon-france.com/1600x600/409331/28339827.jpg"
-    },
-    {
       "id": "heritage_008",
       "name": "Place des Terreaux",
       "type": "heritage",
@@ -423,19 +716,6 @@
       "short_description": "Place historique entre l’Hôtel de Ville et le musée.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "heritage_009",
-      "name": "Opéra National de Lyon",
-      "type": "heritage",
-      "district": "Presqu'île",
-      "themes": [
-        "culture",
-        "architecture"
-      ],
-      "short_description": "Opéra moderne intégré dans un bâtiment historique.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/les-coulisses-de-l-opera-national-de-lyon",
-      "image_url": "https://media.lyon-france.com/1600x600/119855/12655614.jpg"
     },
     {
       "id": "heritage_010",
@@ -603,32 +883,6 @@
       "image_url": null
     },
     {
-      "id": "heritage_023",
-      "name": "Aqueducs romains de Lyon",
-      "type": "heritage",
-      "district": "Agglomération",
-      "themes": [
-        "antiquité",
-        "ingénierie"
-      ],
-      "short_description": "Vestiges des aqueducs alimentant Lugdunum.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda",
-      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
-    },
-    {
-      "id": "heritage_024",
-      "name": "Cimetière de Loyasse",
-      "type": "heritage",
-      "district": "Fourvière",
-      "themes": [
-        "mémoire",
-        "histoire"
-      ],
-      "short_description": "Cimetière historique avec vue sur la ville.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs",
-      "image_url": "https://www.visiterlyon.com/var/site/storage/images/2/7/8/4/684872-2-fre-FR/2c8267526bf3-_copyright-Quentin-Lafont-musee-des-Confluences.jpg"
-    },
-    {
       "id": "heritage_025",
       "name": "Mur des Canuts",
       "type": "heritage",
@@ -642,19 +896,6 @@
       "image_url": null
     },
     {
-      "id": "heritage_026",
-      "name": "Fresque des Lyonnais",
-      "type": "heritage",
-      "district": "Presqu'île",
-      "themes": [
-        "street art",
-        "histoire"
-      ],
-      "short_description": "Mur peint représentant des figures lyonnaises.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda",
-      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
-    },
-    {
       "id": "heritage_027",
       "name": "Passerelle du Palais de Justice",
       "type": "heritage",
@@ -665,18 +906,6 @@
       "short_description": "Passerelle piétonne sur la Saône.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "heritage_028",
-      "name": "Halles Paul Bocuse",
-      "type": "heritage",
-      "district": "3e arrondissement",
-      "themes": [
-        "gastronomie"
-      ],
-      "short_description": "Marché couvert emblématique de la gastronomie lyonnaise.",
-      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/adresses-gourmandes/chocolaterie-patisserie-seve-halles-paul-bocuse",
-      "image_url": "https://media.lyon-france.com/1600x600/175410/26871686.jpg"
     },
     {
       "id": "heritage_029",
@@ -781,71 +1010,6 @@
       "image_url": null
     },
     {
-      "id": "park_002",
-      "name": "Parc de Gerland",
-      "type": "park",
-      "district": "7e arrondissement",
-      "themes": [
-        "nature",
-        "promenade"
-      ],
-      "short_description": "Parc contemporain au sud de Lyon, le long du Rhône.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-gerland",
-      "image_url": "https://media.lyon-france.com/1600x600/185167/21587086.jpg"
-    },
-    {
-      "id": "park_003",
-      "name": "Parc de la Feyssine",
-      "type": "park",
-      "district": "Villeurbanne",
-      "themes": [
-        "nature",
-        "fleuve"
-      ],
-      "short_description": "Espace naturel préservé en bord du Rhône.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-la-feyssine",
-      "image_url": "https://www.visiterlyon.com/var/site/storage/images/3/3/7/8/778733-1-fre-FR/cea1d04d03d3-villeurbanne-parc-feyssine_GillesMichallet.JPG"
-    },
-    {
-      "id": "park_004",
-      "name": "Parc Sergent Blandan",
-      "type": "park",
-      "district": "7e arrondissement",
-      "themes": [
-        "famille",
-        "loisirs"
-      ],
-      "short_description": "Ancienne caserne transformée en parc urbain.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-blandan",
-      "image_url": "https://media.lyon-france.com/1600x600/131430/680870.jpg"
-    },
-    {
-      "id": "park_005",
-      "name": "Parc des Hauteurs",
-      "type": "park",
-      "district": "Fourvière",
-      "themes": [
-        "panorama",
-        "promenade"
-      ],
-      "short_description": "Parc reliant Fourvière au Vieux Lyon avec vue sur la ville.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-des-hauteurs",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.762823&lng=4.82111"
-    },
-    {
-      "id": "park_006",
-      "name": "Parc de Parilly",
-      "type": "park",
-      "district": "8e arrondissement",
-      "themes": [
-        "sport",
-        "nature"
-      ],
-      "short_description": "Grand parc métropolitain dédié aux activités sportives.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-parilly",
-      "image_url": "https://media.lyon-france.com/1600x600/96656/34041869.jpg"
-    },
-    {
       "id": "park_007",
       "name": "Parc de Miribel-Jonage",
       "type": "park",
@@ -858,45 +1022,6 @@
       "short_description": "Grand parc naturel avec plages et activités de plein air.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "park_008",
-      "name": "Jardin des Curiosités",
-      "type": "park",
-      "district": "5e arrondissement",
-      "themes": [
-        "panorama",
-        "jardin"
-      ],
-      "short_description": "Petit jardin offrant une vue remarquable sur Lyon.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/le-jardin-des-curiosites-lyon-vu-d-en-haut",
-      "image_url": "https://www.visiterlyon.com/var/site/storage/images/2/3/3/4/744332-1-fre-FR/60f33e3d37fe-1280px-Jardin_des_Curiosites_2.jpg"
-    },
-    {
-      "id": "park_009",
-      "name": "Jardin Rosa Mir",
-      "type": "park",
-      "district": "Croix-Rousse",
-      "themes": [
-        "insolite",
-        "jardin"
-      ],
-      "short_description": "Jardin insolite décoré de mosaïques et coquillages.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/jardin-rosa-mir",
-      "image_url": "https://media.lyon-france.com/1600x600/132399/21172065.jpg"
-    },
-    {
-      "id": "park_010",
-      "name": "Jardin du Musée des Beaux-Arts",
-      "type": "park",
-      "district": "Presqu'île",
-      "themes": [
-        "jardin",
-        "culture"
-      ],
-      "short_description": "Jardin paisible au cœur d’un ancien cloître.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/jardin-du-musee-des-beaux-arts",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.767132&lng=4.833421"
     },
     {
       "id": "park_011",
@@ -912,19 +1037,6 @@
       "image_url": null
     },
     {
-      "id": "park_012",
-      "name": "Berges du Rhône",
-      "type": "park",
-      "district": "Centre-ville",
-      "themes": [
-        "promenade",
-        "fleuve"
-      ],
-      "short_description": "Aménagements piétons le long du Rhône.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-des-berges-du-rhone",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.734224&lng=4.822097"
-    },
-    {
       "id": "park_013",
       "name": "Berges de Saône",
       "type": "park",
@@ -938,19 +1050,6 @@
       "image_url": null
     },
     {
-      "id": "park_014",
-      "name": "Parc Montel",
-      "type": "park",
-      "district": "Caluire-et-Cuire",
-      "themes": [
-        "nature",
-        "famille"
-      ],
-      "short_description": "Parc de quartier calme et verdoyant.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-montel",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.77352&lng=4.79979"
-    },
-    {
       "id": "park_015",
       "name": "Parc Chazière",
       "type": "park",
@@ -961,19 +1060,6 @@
       "short_description": "Petit parc arboré dans l’ouest lyonnais.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "park_016",
-      "name": "Parc du Vallon",
-      "type": "park",
-      "district": "9e arrondissement",
-      "themes": [
-        "nature",
-        "détente"
-      ],
-      "short_description": "Parc récent aménagé autour d’un vallon.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-du-vallon",
-      "image_url": "https://media.lyon-france.com/1600x600/140103/9128501.jpg"
     },
     {
       "id": "park_017",
@@ -1080,19 +1166,6 @@
       "image_url": null
     },
     {
-      "id": "park_025",
-      "name": "Parc de la Cerisaie",
-      "type": "park",
-      "district": "Croix-Rousse",
-      "themes": [
-        "culture",
-        "jardin"
-      ],
-      "short_description": "Parc culturel accueillant des événements artistiques.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-la-cerisaie-parc-chaziere",
-      "image_url": "https://media.lyon-france.com/1600x600/132204/21586827.png"
-    },
-    {
       "id": "restaurant_001",
       "name": "Le Bouchon des Filles",
       "type": "restaurant",
@@ -1144,19 +1217,6 @@
       "image_url": null
     },
     {
-      "id": "restaurant_005",
-      "name": "Les Halles Paul Bocuse",
-      "type": "restaurant",
-      "district": "3e arrondissement",
-      "themes": [
-        "gastronomie",
-        "marché"
-      ],
-      "short_description": "Temple de la gastronomie lyonnaise.",
-      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/adresses-gourmandes/halles-de-lyon-paul-bocuse",
-      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/0/9/5/755909-1-fre-FR/598be7bc4493-halles-paul-bocuse_Yanis-Ourabah.jpg"
-    },
-    {
       "id": "restaurant_006",
       "name": "Le Garet",
       "type": "restaurant",
@@ -1203,18 +1263,6 @@
       "short_description": "Restaurant mythique de Paul Bocuse.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "restaurant_010",
-      "name": "Brasserie Georges",
-      "type": "restaurant",
-      "district": "Perrache",
-      "themes": [
-        "brasserie"
-      ],
-      "short_description": "Grande brasserie historique de Lyon.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/soierie-saint-georges",
-      "image_url": "https://media.lyon-france.com/1600x600/770253/9664397.jpg"
     },
     {
       "id": "restaurant_011",
@@ -1280,18 +1328,6 @@
       "image_url": null
     },
     {
-      "id": "restaurant_016",
-      "name": "Le Musée",
-      "type": "restaurant",
-      "district": "Vieux Lyon",
-      "themes": [
-        "bouchon"
-      ],
-      "short_description": "Bouchon traditionnel au décor atypique.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/ol-le-musee",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.765767&lng=4.981939"
-    },
-    {
       "id": "restaurant_017",
       "name": "Chez Hugon",
       "type": "restaurant",
@@ -1302,18 +1338,6 @@
       "short_description": "Bouchon ancien et très populaire.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "restaurant_018",
-      "name": "La Bijouterie",
-      "type": "restaurant",
-      "district": "7e arrondissement",
-      "themes": [
-        "moderne"
-      ],
-      "short_description": "Cuisine créative et originale.",
-      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/mode-et-pret-a-porter/bijouterie-aigue-marine",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.876375&lng=4.839617"
     },
     {
       "id": "restaurant_019",
@@ -1350,18 +1374,6 @@
       "short_description": "Restaurant gastronomique discret.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "restaurant_022",
-      "name": "Les Lyonnais",
-      "type": "restaurant",
-      "district": "Vieux Lyon",
-      "themes": [
-        "bouchon"
-      ],
-      "short_description": "Bouchon labellisé, très apprécié.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/lieux-de-spectacle/les-lyonnais-le-caveau",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.761909&lng=4.826218"
     },
     {
       "id": "restaurant_023",
@@ -1483,18 +1495,6 @@
       "short_description": "Cuisine bistrot moderne.",
       "url": "https://www.visiterlyon.com/",
       "image_url": null
-    },
-    {
-      "id": "restaurant_033",
-      "name": "Les Loges",
-      "type": "restaurant",
-      "district": "Vieux Lyon",
-      "themes": [
-        "gastronomie"
-      ],
-      "short_description": "Restaurant gastronomique dans un cadre Renaissance.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/bien-etre/spa-cour-des-loges",
-      "image_url": "https://www.visiterlyon.com/map/static?lat=45.763334&lng=4.827469"
     },
     {
       "id": "restaurant_034",
