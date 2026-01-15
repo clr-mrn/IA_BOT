@@ -101,72 +101,84 @@ export default function Decouvertes() {
         ) : (
           <div className="grid3">
             {filteredParks.map((park) => (
-              <a
-                key={park.id}
-                href={park.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-link"
-              >
-                <div className="feature-card is-visible">
-
-                  {/* Image */}
-                  <div className="feature-img">
-                    <img
-                      src={defaultParkImg}
-                      alt={park.name}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover"
-                      }}
-                    />
-                  </div>
-
-                  {/* Contenu */}
-                  <div className="feature-content">
-                    <h3>{park.name}</h3>
-                    <p style={{ marginBottom: "10px" }}>{park.short_description}</p>
-                    <p style={{ fontSize: "12px", color: "#999", marginBottom: "8px" }}>
-                      {park.district}
-                    </p>
-
-                    {/* Thèmes */}
-                    <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-                      {park.themes.slice(0, 2).map((theme) => (
-                        <span
-                          key={theme}
-                          style={{
-                            fontSize: "11px",
-                            background: "#f3f4f6",
-                            padding: "4px 8px",
-                            borderRadius: "12px",
-                            color: "#666",
-                          }}
-                        >
-                          {theme}
-                        </span>
-                      ))}
-
-                      {park.themes.length > 2 && (
-                        <span
-                          style={{
-                            fontSize: "11px",
-                            background: "#f3f4f6",
-                            padding: "4px 8px",
-                            borderRadius: "12px",
-                            color: "#666",
-                          }}
-                        >
-                          +{park.themes.length - 2}
-                        </span>
-                      )}
+                <div key={park.id} className="feature-card is-visible">
+                    {/* Image */}
+                    <div className="feature-img">
+                        <img
+                            src={park.image_url || park.image || defaultParkImg}
+                            alt={park.name}
+                            loading="lazy"
+                            onError={(e) => {
+                                e.currentTarget.src = defaultParkImg;
+                            }}
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover"
+                            }}
+                        />
                     </div>
-                  </div>
 
-                </div>
-              </a>
-            ))}
+    {/* Contenu */}
+    <div className="feature-content">
+      <h3>{park.name}</h3>
+      <p style={{ marginBottom: "10px" }}>{park.short_description}</p>
+      <p style={{ fontSize: "12px", color: "#999", marginBottom: "8px" }}>
+        {park.district}
+      </p>
+
+      {/* Thèmes */}
+      <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+        {park.themes.slice(0, 2).map((theme) => (
+          <span
+            key={theme}
+            style={{
+              fontSize: "11px",
+              background: "#f3f4f6",
+              padding: "4px 8px",
+              borderRadius: "12px",
+              color: "#666",
+            }}
+          >
+            {theme}
+          </span>
+        ))}
+
+        {park.themes.length > 2 && (
+          <span
+            style={{
+              fontSize: "11px",
+              background: "#f3f4f6",
+              padding: "4px 8px",
+              borderRadius: "12px",
+              color: "#666",
+            }}
+          >
+            +{park.themes.length - 2}
+          </span>
+        )}
+      </div>
+
+      {/* ✅ Bouton "Voir plus" (même logique que Restaurants/Culture) */}
+      {park.url ? (
+        <a
+          href={park.url}
+          target="_blank"
+          rel="noreferrer"
+          className="card-link"
+          style={{ marginTop: 12 }}
+        >
+          Voir plus
+        </a>
+      ) : (
+        <span className="card-link disabled" style={{ marginTop: 12 }}>
+          Lien indisponible
+        </span>
+      )}
+    </div>
+  </div>
+))}
+
           </div>
         )}
       </div>

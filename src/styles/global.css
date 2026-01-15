@@ -52,7 +52,29 @@ body { margin: 0; background: white; color: black; font-family: system-ui; }
 .restaurant-card a:hover { text-decoration: underline; }
 @media (max-width: 768px) { .carousel { height: 250px; } }
 @media (max-width: 600px) { .filters { flex-direction: column; align-items: center; } .search-bar { max-width: 90%; } }
-.card-link { text-decoration: none; color: inherit; display: block; }
+
+.card-link {
+  margin: 14px 16px 16px;
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #f3f4f6;
+  color: #dc2626;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.card-link:hover {
+  background: #e5e7eb;
+}
+
+.card-link.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .ai-intro { text-align: center; margin: 0 auto 30px auto; max-width: 900px; }
 .ai-title { font-size: 25px; font-weight: 700; margin-bottom: 20px; line-height: 1.3; color: #111; }
 .ai-start-btn { padding: 14px 28px; background: #DC2626; color: white; border: none; border-radius: 999px; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.2s ease; box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25); }

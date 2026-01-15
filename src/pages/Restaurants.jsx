@@ -97,10 +97,13 @@ export default function Restaurants() {
 
             {/* Image avec fallback */}
             <div className="carousel">
-              <img
-                src={r.image || defaultRestaurantImg}
-                alt={r.name}
-              />
+                <img
+                    src={r.image_url || defaultRestaurantImg}
+                    alt={r.name}
+                    onError={(e) => {
+                        e.currentTarget.src = defaultRestaurantImg;
+                    }}
+                />
             </div>
 
             <h3>{r.name}</h3>
@@ -108,9 +111,19 @@ export default function Restaurants() {
             <p><strong>Thèmes :</strong> {r.themes.join(", ")}</p>
             <p>{r.short_description}</p>
 
-            <a href={r.url} target="_blank" rel="noreferrer">
-              Voir plus
+            {r.url ? (
+            <a
+                href={r.url}
+                target="_blank"
+                rel="noreferrer"
+                className="card-link"
+            >
+                Voir plus
             </a>
+) : (
+  <span className="card-link disabled">Lien indisponible</span>
+)}
+
           </div>
         ))}
       </div>
