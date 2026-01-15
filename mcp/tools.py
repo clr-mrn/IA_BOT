@@ -81,19 +81,120 @@ def _first_text(el: Any) -> Optional[str]:
     t = _clean_text(t)
     return t or None
 
+def _format_event_line(it: dict[str, Any]) -> str:
+    title = it.get("title") or "Événement"
+    url = it.get("url") or ""
+    sd = it.get("startDate")
+    loc = it.get("location")
+
+    bits = [title]
+    if sd:
+        bits.append(sd)
+    if loc:
+        bits.append(loc)
+
+    suffix = " — ".join(bits)
+    return f"* {suffix} : {url}" if url else f"* {suffix}"
+
 
 def _extract_jsonld(soup: BeautifulSoup) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
+
+    def push(obj: Any) -> None:
+        if isinstance(obj, dict):
+            # si @graph, on déroule
+            if isinstance(obj.get("@graph"), list):
+                for x in obj["@graph"]:
+                    if isinstance(x, dict):
+                        out.append(x)
+            out.append(obj)
+        elif isinstance(obj, list):
+            for x in obj:
+                push(x)
+
     for script in soup.find_all("script", type="application/ld+json"):
         try:
             data = json.loads(script.get_text(strip=True))
-            if isinstance(data, dict):
-                out.append(data)
-            elif isinstance(data, list):
-                out.extend([x for x in data if isinstance(x, dict)])
+            push(data)
         except Exception:
             continue
-    return out
+
+    # dédoublonne approximatif
+    uniq: list[dict[str, Any]] = []
+    seen = set()
+    for d in out:
+        key = (d.get("@type"), d.get("name"), d.get("url"), d.get("@id"))
+        if key in seen:
+            continue
+        seen.add(key)
+        uniq.append(d)
+    return uniq
+
+
+def _event_details(url: str) -> dict[str, Any]:
+    """
+    Ouvre une page d'événement et tente d'extraire des infos structurées via JSON-LD (@type=Event).
+    Retourne un dict avec startDate/endDate/location si trouvés.
+    """
+    soup = get_page_soup(url)
+    if not soup:
+        return {}
+
+    # 1) JSON-LD (le plus fiable)
+    for obj in _extract_jsonld(soup):
+        typ = obj.get("@type")
+
+        is_event = (typ == "Event") or (isinstance(typ, list) and "Event" in typ)
+        if not is_event:
+            continue
+
+                # location peut être dict / list / str
+        location_name = None
+        location_address = None
+
+        loc = obj.get("location")
+        if isinstance(loc, str):
+            location_name = loc
+        elif isinstance(loc, dict):
+            location_name = loc.get("name")
+            addr = loc.get("address")
+            if isinstance(addr, str):
+                location_address = addr
+            elif isinstance(addr, dict):
+                parts = [
+                    addr.get("streetAddress"),
+                    addr.get("postalCode"),
+                    addr.get("addressLocality"),
+                ]
+                parts = [p for p in parts if isinstance(p, str) and p.strip()]
+                if parts:
+                    location_address = _clean_text(" ".join(parts))
+        elif isinstance(loc, list) and loc and isinstance(loc[0], dict):
+            location_name = loc[0].get("name")
+            addr = loc[0].get("address")
+            if isinstance(addr, str):
+                location_address = addr
+            elif isinstance(addr, dict):
+                parts = [
+                    addr.get("streetAddress"),
+                    addr.get("postalCode"),
+                    addr.get("addressLocality"),
+                ]
+                parts = [p for p in parts if isinstance(p, str) and p.strip()]
+                if parts:
+                    location_address = _clean_text(" ".join(parts))
+
+        # si pas de name mais une address existe, on l’utilise
+        location = location_name or location_address
+
+        return {
+            "startDate": obj.get("startDate"),
+            "endDate": obj.get("endDate"),
+            "location": location,
+        }
+
+    return {}
+
 
 
 def _extract_section_text(soup: BeautifulSoup, keywords: list[str]) -> Optional[str]:
@@ -261,7 +362,10 @@ def scrape_place(url: str) -> dict[str, Any]:
             opening = oh
             break
     if not opening:
-        opening = _extract_section_text(soup, ["horaire", "horaires", "ouverture"])
+        cand = soup.select_one("[class*='horaire'], [class*='opening'], [id*='horaire'], [id*='opening']")
+        if cand:
+            opening = _first_text(cand)
+
     item["opening_hours"] = opening
 
     # Tarifs
@@ -328,7 +432,16 @@ def scrape_events(limit: int = 10) -> dict[str, Any]:
                 info = txt
 
         seen.add(url)
-        items.append({"title": title, "url": url, "info_pratique": info})
+        details = _event_details(url)
+
+        items.append({
+            "title": title,
+            "url": url,
+            "info_pratique": info,
+            "startDate": details.get("startDate"),
+            "endDate": details.get("endDate"),
+            "location": details.get("location"),
+        })
 
         if len(items) >= limit:
             break
