@@ -76,12 +76,10 @@ class KnowledgeBase:
             p_type = _norm(str(p.get("type", "")))
             p_district = _norm(str(p.get("district", "")))
 
-            # filtre type si identifié
+            # filtre
             if want_type and p_type != want_type:
                 continue
 
-            # filtre arrondissement si présent
-            # accepte "6e", "lyon 6e", "6e arrondissement", "69006"
             if want_arr:
                 ok_arr = (
                     want_arr in p_district

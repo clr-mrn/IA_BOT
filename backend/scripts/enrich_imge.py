@@ -42,23 +42,18 @@ def extract_main_image(page_url: str) -> str | None:
 
     soup = BeautifulSoup(r.text, "html.parser")
 
-    # 1) og:image
     og = soup.find("meta", attrs={"property": "og:image"})
     if og and og.get("content"):
         return _abs_url(page_url, og["content"])
 
-    # 2) twitter:image
     tw = soup.find("meta", attrs={"name": "twitter:image"})
     if tw and tw.get("content"):
         return _abs_url(page_url, tw["content"])
 
-    # 3) rel image_src
     img_src = soup.find("link", attrs={"rel": "image_src"})
     if img_src and img_src.get("href"):
         return _abs_url(page_url, img_src["href"])
 
-    # 4) fallback : première <img> qui ressemble à une vraie image
-    # (on évite logos/icônes trop petits en filtrant un peu)
     for img in soup.select("img"):
         src = img.get("src") or img.get("data-src") or img.get("data-lazy")
         if not src:
@@ -83,7 +78,6 @@ def extract_main_image(page_url: str) -> str | None:
 def main():
     data = json.loads(KB_IN.read_text(encoding="utf-8"))
 
-    # ta KB peut être soit {"places":[...]} soit directement une liste
     if isinstance(data, dict):
         places = data.get("places", [])
     elif isinstance(data, list):

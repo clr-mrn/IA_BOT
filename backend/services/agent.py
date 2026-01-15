@@ -56,11 +56,8 @@ Réponse finale
 """
 
 
-# =========================
-# Helpers : détection contexte
-# =========================
+# Détection contexte
 
-# Large set de mots-clés tourisme
 TOURISM_KEYWORDS = {
     # intention générale
     "visiter", "visite", "voir", "découvrir", "decouvrir", "faire", "sortir", "idées", "idees",
@@ -99,12 +96,12 @@ TOURISM_KEYWORDS = {
     "place", "rue", "quartier", "traboule", "fourvière", "fourviere", "vieux-lyon", "vieux lyon",
     "histoire", "architecture",
 
-    # infos variables (tool)
+    # infos variables
     "adresse", "horaires", "horaire", "ouverture", "ouvert", "fermé", "ferme",
     "tarif", "tarifs", "prix", "billet", "tickets", "réservation", "reservation",
 }
 
-# Contexte Lyon / quartiers
+# Lyon / quartiers
 LYON_KEYWORDS = {
     "lyon", "grand lyon", "métropole", "metropole",
     "presqu'île", "presquile", "vieux-lyon", "vieux lyon", "croix-rousse", "croix rousse",
@@ -207,9 +204,7 @@ def _is_tourism_request(text: str) -> bool:
     return False
 
 
-# =========================
-# Helpers : events
-# =========================
+# Events
 
 def _parse_iso_date(s: str | None) -> date | None:
     if not s:
@@ -266,9 +261,7 @@ def _format_event_line(it: dict[str, Any]) -> str:
     return f"* {left} : {url}" if url else f"* {left}"
 
 
-# =========================
 # Agent
-# =========================
 
 class Agent:
     def __init__(self):
@@ -450,7 +443,6 @@ IMPORTANT:
         if force_no_tool:
             tool_call = None
 
-        # Si le LLM renvoie du JSON tool brut non parsé, éviter de l'envoyer au front
         if tool_call is None and _looks_like_tool_json(out1):
             out1 = "Je peux t’aider, mais j’ai besoin que tu précises un peu (type de lieu, quartier, ou ce que tu veux exactement)."
 
@@ -463,7 +455,6 @@ IMPORTANT:
             args = tool_call["args"]
             steps.append(f"tool_call:{tool_called}")
 
-            # Safety net args
             if tool_called == "scrape_category":
                 if "query" not in args and "categorie" in args:
                     args["query"] = args.pop("categorie")
@@ -516,11 +507,9 @@ IMPORTANT:
                 for it in (tool_payload.get("items") or []):
                     if isinstance(it, dict) and it.get("url"):
                         sources.append({"type": "web", "url": it["url"]})
-                # scrape_place renvoie "item"
                 if isinstance(tool_payload.get("item"), dict) and tool_payload["item"].get("url"):
                     sources.append({"type": "web", "url": tool_payload["item"]["url"]})
 
-            # PASS 2 LLM: transformer payload tool en réponse
             steps.append("llm_pass2")
             user_block_pass2 = f"""Message utilisateur: {user_message}
 
@@ -546,7 +535,6 @@ Tâche:
                 err2 = str(e)
 
         else:
-            # Pas de tool -> réponse directe LLM
             steps.append("final_from_pass1")
             answer = out1
 
@@ -556,7 +544,6 @@ Tâche:
         history = history + [{"role": "user", "content": user_message}, {"role": "assistant", "content": answer}]
         self.memory[conversation_id] = history[-12:]
 
-        # Trace errors
         trace_errors: dict[str, str] = {}
         if isinstance(tool_payload, dict) and tool_payload.get("error"):
             trace_errors["tool_error"] = str(tool_payload.get("error"))

@@ -12,14 +12,12 @@ export default function Decouvertes() {
   const filteredParks = useMemo(() => {
     let list = [...parks];
 
-    // Recherche par nom
     if (search.trim() !== "") {
       list = list.filter((park) =>
         park.name.toLowerCase().includes(search.toLowerCase())
       );
     }
 
-    // Filtre par thème
     if (selectedTheme !== "all") {
       list = list.filter((park) => park.themes.includes(selectedTheme));
     }
@@ -27,7 +25,6 @@ export default function Decouvertes() {
     return list;
   }, [selectedTheme, search]);
 
-  // Extraire tous les thèmes uniques
   const allThemes = Array.from(
     new Set(parks.flatMap((park) => park.themes))
   ).sort();
@@ -159,7 +156,7 @@ export default function Decouvertes() {
         )}
       </div>
 
-      {/* ✅ Bouton "Voir plus" (même logique que Restaurants/Culture) */}
+      {/* Bouton "Voir plus" */}
       {park.url ? (
         <a
           href={park.url}
