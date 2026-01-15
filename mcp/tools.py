@@ -9,10 +9,6 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-# ----------------------------------------------------------------------
-# (Optionnel) Fix UTF-8 pour affichage console Windows
-# N'impacte pas FastAPI
-# ----------------------------------------------------------------------
 try:
     sys.stdout.reconfigure(encoding="utf-8")
 except Exception:
@@ -20,10 +16,7 @@ except Exception:
 
 BASE = "https://www.visiterlyon.com"
 
-# ----------------------------------------------------------------------
-# Cache TTL simple (évite de rescraper en boucle)
-# ----------------------------------------------------------------------
-_CACHE: dict[str, tuple[float, str]] = {}  # url -> (timestamp, html)
+_CACHE: dict[str, tuple[float, str]] = {} 
 CACHE_TTL_S = 300  # 5 minutes
 
 
@@ -42,9 +35,6 @@ def _cache_set(url: str, html: str) -> None:
     _CACHE[url] = (time.time(), html)
 
 
-# ----------------------------------------------------------------------
-# HTTP + soup
-# ----------------------------------------------------------------------
 def get_page_soup(url: str) -> Optional[BeautifulSoup]:
     headers = {
         "User-Agent": "Epitech-IA-Agent-Project/1.0",
@@ -67,9 +57,6 @@ def get_page_soup(url: str) -> Optional[BeautifulSoup]:
         return None
 
 
-# ----------------------------------------------------------------------
-# Helpers parsing
-# ----------------------------------------------------------------------
 def _clean_text(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
@@ -102,7 +89,6 @@ def _extract_jsonld(soup: BeautifulSoup) -> list[dict[str, Any]]:
 
     def push(obj: Any) -> None:
         if isinstance(obj, dict):
-            # si @graph, on déroule
             if isinstance(obj.get("@graph"), list):
                 for x in obj["@graph"]:
                     if isinstance(x, dict):
@@ -119,7 +105,6 @@ def _extract_jsonld(soup: BeautifulSoup) -> list[dict[str, Any]]:
         except Exception:
             continue
 
-    # dédoublonne approximatif
     uniq: list[dict[str, Any]] = []
     seen = set()
     for d in out:
@@ -140,7 +125,6 @@ def _event_details(url: str) -> dict[str, Any]:
     if not soup:
         return {}
 
-    # 1) JSON-LD (le plus fiable)
     for obj in _extract_jsonld(soup):
         typ = obj.get("@type")
 
@@ -148,7 +132,6 @@ def _event_details(url: str) -> dict[str, Any]:
         if not is_event:
             continue
 
-                # location peut être dict / list / str
         location_name = None
         location_address = None
 
@@ -222,9 +205,6 @@ def _extract_section_text(soup: BeautifulSoup, keywords: list[str]) -> Optional[
     return None
 
 
-# ----------------------------------------------------------------------
-# Standard output shapes
-# ----------------------------------------------------------------------
 def _ok_items(source_url: str, items: list[dict[str, Any]]) -> dict[str, Any]:
     return {"ok": True, "source_url": source_url, "items": items, "error": None}
 
@@ -241,9 +221,6 @@ def _err_item(source_url: str, msg: str) -> dict[str, Any]:
     return {"ok": False, "source_url": source_url, "item": None, "error": msg}
 
 
-# ==============================================================================
-# TOOL: scrape_category(query)
-# ==============================================================================
 def scrape_category(query: str, limit: int = 10) -> dict[str, Any]:
     """
     Recherche simple sur visiterlyon.com.
@@ -268,7 +245,6 @@ def scrape_category(query: str, limit: int = 10) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
 
-    # Heuristique: on garde les liens internes vers contenu
     for a in soup.select('a[href^="/"]'):
         href = a.get("href", "")
         if not href:
@@ -298,9 +274,6 @@ def scrape_category(query: str, limit: int = 10) -> dict[str, Any]:
     return _ok_items(source_url, items)
 
 
-# ==============================================================================
-# TOOL: scrape_place(url)
-# ==============================================================================
 def scrape_place(url: str) -> dict[str, Any]:
     """
     Extrait les détails pratiques d'un lieu.
@@ -321,7 +294,6 @@ def scrape_place(url: str) -> dict[str, Any]:
     phone = soup.select_one('a[href^="tel:"]')
     item["phone"] = _first_text(phone)
 
-    # Site externe (premier lien externe)
     website = None
     for a in soup.select('a[href^="http"]'):
         href = a.get("href", "")
@@ -381,17 +353,13 @@ def scrape_place(url: str) -> dict[str, Any]:
         prices = _extract_section_text(soup, ["tarif", "tarifs", "prix", "billet", "tickets"])
     item["prices"] = prices
 
-    # Description courte (meta description)
+    # Description
     meta_desc = soup.find("meta", attrs={"name": "description"})
     if meta_desc and meta_desc.get("content"):
         item["short_description"] = _clean_text(meta_desc["content"])
 
     return _ok_item(url, item)
 
-
-# ==============================================================================
-# TOOL: scrape_events(limit)
-# ==============================================================================
 def scrape_events(limit: int = 10) -> dict[str, Any]:
     """
     Récupère des événements de l'agenda.
@@ -405,7 +373,6 @@ def scrape_events(limit: int = 10) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
 
-    # Heuristique: liens qui ressemblent à des pages d'événements
     candidates = soup.select(
         'a[href*="/sortir/l-agenda/"], a[href*="/evenement"], a[href*="/evenements"]'
     )
@@ -446,7 +413,6 @@ def scrape_events(limit: int = 10) -> dict[str, Any]:
         if len(items) >= limit:
             break
 
-    # Fallback si la page change
     if not items:
         for a in soup.select('a[href^="/"]'):
             href = a.get("href", "")

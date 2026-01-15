@@ -28,12 +28,10 @@ export default function Home() {
 
   return (
     <>
-      {/* CARROUSEL */}
       <section id="decouvrir" className="page">
         <ImageCarousel slides={slides} />
       </section>
 
-      {/* BLOC INTRO IA */}
       <section className="ai-intro">
         <h2 className="ai-title">
           Vous voulez découvrir Lyon ?
@@ -47,9 +45,9 @@ export default function Home() {
         >
           Commencez
         </button>
-      </section>   {/* ← ICI : la section est maintenant fermée */}
+      </section>   
 
-      {/* SECTION 2 — CARTES */}
+      {/* CARTES */}
       <section className="grid3">
         <Link to="/decouvertes" className="card-link">
           <FeatureCard

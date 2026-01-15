@@ -3,26 +3,21 @@ import data from "/backend/data/kb.json";
 import defaultRestaurantImg from "../assets/images/restaurant_defaut.jpg";
 
 export default function Restaurants() {
-  // 1. On filtre uniquement les restaurants
   const restaurants = data.places.filter(p => p.type === "restaurant");
 
-  // 2. Extraction automatique des districts et thèmes
   const districts = [...new Set(restaurants.map(r => r.district))];
   const themes = [...new Set(restaurants.flatMap(r => r.themes))];
 
-  // 3. États
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [search, setSearch] = useState("");
   const [selectedTheme, setSelectedTheme] = useState("");
 
-  // 4. Réinitialisation des filtres
   const resetFilters = () => {
     setSelectedDistrict("");
     setSelectedTheme("");
     setSearch("");
   };
 
-  // 5. Filtrage dynamique
   const filteredRestaurants = useMemo(() => {
     let list = [...restaurants];
 
@@ -47,7 +42,6 @@ export default function Restaurants() {
     <section className="page restaurants-page">
       <h1>Recommandations Restaurants</h1>
 
-      {/* Barre de recherche */}
       <input
         type="text"
         placeholder="Rechercher un restaurant..."
@@ -56,7 +50,6 @@ export default function Restaurants() {
         className="search-bar"
       />
 
-      {/* Filtre district */}
       <div className="filters">
         <select
           value={selectedDistrict}
@@ -68,13 +61,11 @@ export default function Restaurants() {
           ))}
         </select>
 
-        {/* Bouton reset */}
         <button className="reset-btn" onClick={resetFilters}>
           Réinitialiser
         </button>
       </div>
 
-      {/* Boutons de thèmes */}
       <div className="tags">
         {themes.map(t => {
           const label = t.charAt(0).toUpperCase() + t.slice(1);
@@ -90,12 +81,10 @@ export default function Restaurants() {
         })}
       </div>
 
-      {/* Liste filtrée */}
       <div className="restaurant-list">
         {filteredRestaurants.map(r => (
           <div key={r.id} className="restaurant-card">
 
-            {/* Image avec fallback */}
             <div className="carousel">
                 <img
                     src={r.image_url || defaultRestaurantImg}

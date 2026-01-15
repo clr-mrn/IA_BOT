@@ -93,7 +93,6 @@ def main():
                 print(f"[NO MATCH] {name}")
         except Exception as e:
             print(f"[ERR] {name}: {e}")
-            # ne casse pas tout le batch
         time.sleep(0.25)  # petite pause pour éviter de spam
 
     out = save_same_shape(original, places)
