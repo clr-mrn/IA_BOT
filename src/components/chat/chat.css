@@ -38,7 +38,7 @@
   position: fixed;
   right: 20px;
   bottom: 88px;
-  width: 360px;
+  width: 600px; /* ← FENÊTRE PLUS LARGE */
   max-width: calc(100vw - 40px);
   transform: translateY(10px) scale(0.98);
   opacity: 0;
@@ -125,6 +125,8 @@
   background: #f9fafb;
   color: #111827;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .msg.user .bubble {
   background: darkred;
