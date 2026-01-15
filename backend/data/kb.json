@@ -10,7 +10,8 @@
         "culture"
       ],
       "short_description": "L’un des plus grands musées d’art de France.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/visites-et-ateliers/les-visites-ateliers-pour-enfants-au-musee-des-beaux-arts-de-lyon"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/visites-et-ateliers/les-visites-ateliers-pour-enfants-au-musee-des-beaux-arts-de-lyon",
+      "image_url": "https://media.lyon-france.com/1600x600/6402024/16440088.jpg"
     },
     {
       "id": "museum_002",
@@ -22,7 +23,8 @@
         "civilisations"
       ],
       "short_description": "Musée des sciences et des sociétés à l’architecture contemporaine.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda/spectacles/les-contes-a-gigoter-au-musee-des-confluences"
+      "url": "https://www.visiterlyon.com/sortir/l-agenda/spectacles/les-contes-a-gigoter-au-musee-des-confluences",
+      "image_url": "https://media.lyon-france.com/1600x600/7117068/25917438.jpg"
     },
     {
       "id": "museum_003",
@@ -34,7 +36,8 @@
         "marionnettes"
       ],
       "short_description": "Musée d’histoire de Lyon et des arts de la marionnette.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-d-histoire-de-lyon-gadagne"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-d-histoire-de-lyon-gadagne",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/4/8/4/744849-1-fre-FR/866a28f4e95e-MHL-musee-gadagne_Sabine-Serrad.jpg"
     },
     {
       "id": "museum_004",
@@ -45,7 +48,8 @@
         "art contemporain"
       ],
       "short_description": "Musée dédié à la création artistique contemporaine.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_005",
@@ -57,7 +61,8 @@
         "imprimerie"
       ],
       "short_description": "Musée retraçant l’histoire de l’imprimerie et du livre.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_006",
@@ -69,7 +74,8 @@
         "histoire"
       ],
       "short_description": "Musée dédié aux inventeurs du cinéma.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-lumiere"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-lumiere",
+      "image_url": "https://media.lyon-france.com/1600x600/137869/9586685.jpg"
     },
     {
       "id": "museum_007",
@@ -81,7 +87,8 @@
         "art"
       ],
       "short_description": "Musée consacré aux textiles et aux arts décoratifs.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-des-tissus"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-des-tissus",
+      "image_url": "https://media.lyon-france.com/1600x600/193455/8711216.jpg"
     },
     {
       "id": "museum_008",
@@ -93,7 +100,8 @@
         "arts décoratifs"
       ],
       "short_description": "Collection d’objets d’art décoratif et de design.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_009",
@@ -105,7 +113,8 @@
         "mémoire"
       ],
       "short_description": "Musée consacré à la Seconde Guerre mondiale.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_010",
@@ -117,7 +126,8 @@
         "patrimoine"
       ],
       "short_description": "Collection de véhicules anciens et de transports historiques.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_011",
@@ -128,7 +138,8 @@
         "peinture"
       ],
       "short_description": "Musée consacré à l’œuvre du peintre Jean Couty.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-jean-couty"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/musee-jean-couty",
+      "image_url": "https://media.lyon-france.com/1600x600/2996254/28283884.jpg"
     },
     {
       "id": "museum_012",
@@ -140,7 +151,8 @@
         "histoire"
       ],
       "short_description": "Musée retraçant l’histoire des pompiers lyonnais.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_013",
@@ -152,7 +164,8 @@
         "archéologie"
       ],
       "short_description": "Musée et vestiges gallo-romains de Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_014",
@@ -164,7 +177,8 @@
         "miniatures"
       ],
       "short_description": "Collection de décors miniatures et accessoires de cinéma.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_015",
@@ -176,7 +190,8 @@
         "ethnographie"
       ],
       "short_description": "Musée dédié aux cultures africaines.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda"
+      "url": "https://www.visiterlyon.com/sortir/l-agenda",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
     },
     {
       "id": "museum_016",
@@ -188,7 +203,8 @@
         "art"
       ],
       "short_description": "Collection d’art religieux et sacré.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_017",
@@ -200,7 +216,8 @@
         "artisanat"
       ],
       "short_description": "Musée dédié à l’histoire des canuts et de la soie.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/maison-des-canuts"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/maison-des-canuts",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/4/5/9/1/841954-1-fre-FR/313248fb04ad-Maison-des-Canuts-tissage.jpg"
     },
     {
       "id": "museum_018",
@@ -212,7 +229,8 @@
         "urbanisme"
       ],
       "short_description": "Musée à ciel ouvert dédié à l’architecte Tony Garnier.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/cite-musee-tony-garnier"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/cite-musee-tony-garnier",
+      "image_url": "https://media.lyon-france.com/1600x600/168447/32121237.jpg"
     },
     {
       "id": "museum_019",
@@ -224,7 +242,8 @@
         "artisanat"
       ],
       "short_description": "Présentation du patrimoine textile lyonnais.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_020",
@@ -235,7 +254,8 @@
         "photographie"
       ],
       "short_description": "Expositions dédiées à la photographie.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_021",
@@ -246,7 +266,8 @@
         "cinéma"
       ],
       "short_description": "Lieu culturel consacré au cinéma.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/artisans-d-art-galeries/galerie-cinema-2-institut-lumiere"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/artisans-d-art-galeries/galerie-cinema-2-institut-lumiere",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.766412&lng=4.834784"
     },
     {
       "id": "museum_022",
@@ -258,7 +279,8 @@
         "patrimoine"
       ],
       "short_description": "Objets et attractions foraines historiques.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_023",
@@ -270,7 +292,8 @@
         "histoire"
       ],
       "short_description": "Histoire hospitalière lyonnaise.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_024",
@@ -282,7 +305,8 @@
         "tradition"
       ],
       "short_description": "Musée dédié au personnage de Guignol.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "museum_025",
@@ -293,7 +317,8 @@
         "science"
       ],
       "short_description": "Espace pédagogique dédié aux sciences.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_001",
@@ -305,7 +330,8 @@
         "panorama"
       ],
       "short_description": "Basilique emblématique dominant la ville de Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_002",
@@ -317,7 +343,8 @@
         "architecture"
       ],
       "short_description": "Cathédrale médiévale située dans le Vieux Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_003",
@@ -329,7 +356,8 @@
         "archéologie"
       ],
       "short_description": "Vestiges antiques témoignant de l’époque gallo-romaine.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_004",
@@ -341,7 +369,8 @@
         "tradition"
       ],
       "short_description": "Passages typiques reliant les cours intérieures.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_005",
@@ -353,7 +382,8 @@
         "architecture"
       ],
       "short_description": "Réseau de passages utilisé par les canuts.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/la-maison-des-canuts-et-les-traboules-de-la-croix-rousse"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/la-maison-des-canuts-et-les-traboules-de-la-croix-rousse",
+      "image_url": "https://media.lyon-france.com/1600x600/5326494/35946425.jpg"
     },
     {
       "id": "heritage_006",
@@ -365,7 +395,8 @@
         "architecture"
       ],
       "short_description": "Bâtiment historique de la place des Terreaux.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/les-salons-de-l-hotel-de-ville-de-lyon"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/les-salons-de-l-hotel-de-ville-de-lyon",
+      "image_url": "https://media.lyon-france.com/1600x600/119929/11167942.png"
     },
     {
       "id": "heritage_007",
@@ -377,7 +408,8 @@
         "symbole"
       ],
       "short_description": "Grande place emblématique du centre de Lyon.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda/fetes/grande-roue-de-la-place-bellecour"
+      "url": "https://www.visiterlyon.com/sortir/l-agenda/fetes/grande-roue-de-la-place-bellecour",
+      "image_url": "https://media.lyon-france.com/1600x600/409331/28339827.jpg"
     },
     {
       "id": "heritage_008",
@@ -389,7 +421,8 @@
         "architecture"
       ],
       "short_description": "Place historique entre l’Hôtel de Ville et le musée.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_009",
@@ -401,7 +434,8 @@
         "architecture"
       ],
       "short_description": "Opéra moderne intégré dans un bâtiment historique.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/les-coulisses-de-l-opera-national-de-lyon"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/visites-et-decouvertes/les-coulisses-de-l-opera-national-de-lyon",
+      "image_url": "https://media.lyon-france.com/1600x600/119855/12655614.jpg"
     },
     {
       "id": "heritage_010",
@@ -413,7 +447,8 @@
         "commerce"
       ],
       "short_description": "Ancien palais dédié aux échanges commerciaux.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_011",
@@ -424,7 +459,8 @@
         "panorama"
       ],
       "short_description": "Tour offrant une vue panoramique sur Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_012",
@@ -436,7 +472,8 @@
         "architecture"
       ],
       "short_description": "Pont reliant la Presqu’île au Vieux Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_013",
@@ -447,7 +484,8 @@
         "pont"
       ],
       "short_description": "Pont traversant le Rhône en centre-ville.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_014",
@@ -459,7 +497,8 @@
         "histoire"
       ],
       "short_description": "Pont ancien reliant les deux rives du Rhône.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_015",
@@ -471,7 +510,8 @@
         "tradition"
       ],
       "short_description": "Quartier historique aux rues pavées.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_016",
@@ -483,7 +523,8 @@
         "architecture"
       ],
       "short_description": "Quartier médiéval du Vieux Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_017",
@@ -495,7 +536,8 @@
         "patrimoine"
       ],
       "short_description": "Cœur historique du Vieux Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_018",
@@ -507,7 +549,8 @@
         "architecture"
       ],
       "short_description": "Cour emblématique liée à l’histoire des canuts.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_019",
@@ -518,7 +561,8 @@
         "antiquité"
       ],
       "short_description": "Vestige romain dédié aux rassemblements antiques.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_020",
@@ -530,7 +574,8 @@
         "histoire"
       ],
       "short_description": "Ancien hôpital reconverti en lieu culturel.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_021",
@@ -542,7 +587,8 @@
         "architecture"
       ],
       "short_description": "Gare historique du centre ancien.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_022",
@@ -553,7 +599,8 @@
         "militaire"
       ],
       "short_description": "Ancien fort militaire sur les hauteurs de Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_023",
@@ -565,7 +612,8 @@
         "ingénierie"
       ],
       "short_description": "Vestiges des aqueducs alimentant Lugdunum.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda"
+      "url": "https://www.visiterlyon.com/sortir/l-agenda",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
     },
     {
       "id": "heritage_024",
@@ -577,7 +625,8 @@
         "histoire"
       ],
       "short_description": "Cimetière historique avec vue sur la ville.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/2/7/8/4/684872-2-fre-FR/2c8267526bf3-_copyright-Quentin-Lafont-musee-des-Confluences.jpg"
     },
     {
       "id": "heritage_025",
@@ -589,7 +638,8 @@
         "tradition"
       ],
       "short_description": "Fresque monumentale emblématique de Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_026",
@@ -601,7 +651,8 @@
         "histoire"
       ],
       "short_description": "Mur peint représentant des figures lyonnaises.",
-      "url": "https://www.visiterlyon.com/sortir/l-agenda"
+      "url": "https://www.visiterlyon.com/sortir/l-agenda",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/5/2/8/8259-107-fre-FR/660e433fbf4c-Nuits-sonores-2025-optimisee-6.jpg"
     },
     {
       "id": "heritage_027",
@@ -612,7 +663,8 @@
         "pont"
       ],
       "short_description": "Passerelle piétonne sur la Saône.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_028",
@@ -623,7 +675,8 @@
         "gastronomie"
       ],
       "short_description": "Marché couvert emblématique de la gastronomie lyonnaise.",
-      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/adresses-gourmandes/chocolaterie-patisserie-seve-halles-paul-bocuse"
+      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/adresses-gourmandes/chocolaterie-patisserie-seve-halles-paul-bocuse",
+      "image_url": "https://media.lyon-france.com/1600x600/175410/26871686.jpg"
     },
     {
       "id": "heritage_029",
@@ -634,7 +687,8 @@
         "urbanisme"
       ],
       "short_description": "Quartier moderne au sud de la Presqu’île.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_030",
@@ -646,7 +700,8 @@
         "diversité"
       ],
       "short_description": "Quartier populaire et multiculturel.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_031",
@@ -657,7 +712,8 @@
         "architecture"
       ],
       "short_description": "Quartier élégant proche du parc de la Tête d’Or.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_032",
@@ -669,7 +725,8 @@
         "transport"
       ],
       "short_description": "Ancienne gare transformée en lieu culturel.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_033",
@@ -681,7 +738,8 @@
         "architecture"
       ],
       "short_description": "Palais de justice à colonnes au bord de la Saône.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_034",
@@ -692,7 +750,8 @@
         "religieux"
       ],
       "short_description": "Vestige roman de l’ancienne abbaye d’Ainay.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "heritage_035",
@@ -704,7 +763,8 @@
         "roman"
       ],
       "short_description": "Église romane majeure de Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_001",
@@ -717,7 +777,8 @@
         "zoo"
       ],
       "short_description": "Grand parc urbain avec lac, jardins botaniques et zoo.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_002",
@@ -729,7 +790,8 @@
         "promenade"
       ],
       "short_description": "Parc contemporain au sud de Lyon, le long du Rhône.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-gerland"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-gerland",
+      "image_url": "https://media.lyon-france.com/1600x600/185167/21587086.jpg"
     },
     {
       "id": "park_003",
@@ -741,7 +803,8 @@
         "fleuve"
       ],
       "short_description": "Espace naturel préservé en bord du Rhône.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-la-feyssine"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-la-feyssine",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/3/3/7/8/778733-1-fre-FR/cea1d04d03d3-villeurbanne-parc-feyssine_GillesMichallet.JPG"
     },
     {
       "id": "park_004",
@@ -753,7 +816,8 @@
         "loisirs"
       ],
       "short_description": "Ancienne caserne transformée en parc urbain.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-blandan"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-blandan",
+      "image_url": "https://media.lyon-france.com/1600x600/131430/680870.jpg"
     },
     {
       "id": "park_005",
@@ -765,7 +829,8 @@
         "promenade"
       ],
       "short_description": "Parc reliant Fourvière au Vieux Lyon avec vue sur la ville.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-des-hauteurs"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-des-hauteurs",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.762823&lng=4.82111"
     },
     {
       "id": "park_006",
@@ -777,7 +842,8 @@
         "nature"
       ],
       "short_description": "Grand parc métropolitain dédié aux activités sportives.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-parilly"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-parilly",
+      "image_url": "https://media.lyon-france.com/1600x600/96656/34041869.jpg"
     },
     {
       "id": "park_007",
@@ -790,7 +856,8 @@
         "lac"
       ],
       "short_description": "Grand parc naturel avec plages et activités de plein air.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_008",
@@ -802,7 +869,8 @@
         "jardin"
       ],
       "short_description": "Petit jardin offrant une vue remarquable sur Lyon.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/le-jardin-des-curiosites-lyon-vu-d-en-haut"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/le-jardin-des-curiosites-lyon-vu-d-en-haut",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/2/3/3/4/744332-1-fre-FR/60f33e3d37fe-1280px-Jardin_des_Curiosites_2.jpg"
     },
     {
       "id": "park_009",
@@ -814,7 +882,8 @@
         "jardin"
       ],
       "short_description": "Jardin insolite décoré de mosaïques et coquillages.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/jardin-rosa-mir"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/jardin-rosa-mir",
+      "image_url": "https://media.lyon-france.com/1600x600/132399/21172065.jpg"
     },
     {
       "id": "park_010",
@@ -826,7 +895,8 @@
         "culture"
       ],
       "short_description": "Jardin paisible au cœur d’un ancien cloître.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/jardin-du-musee-des-beaux-arts"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/jardin-du-musee-des-beaux-arts",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.767132&lng=4.833421"
     },
     {
       "id": "park_011",
@@ -838,7 +908,8 @@
         "jardin"
       ],
       "short_description": "Jardin archéologique avec vestiges antiques.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_012",
@@ -850,7 +921,8 @@
         "fleuve"
       ],
       "short_description": "Aménagements piétons le long du Rhône.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-des-berges-du-rhone"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-des-berges-du-rhone",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.734224&lng=4.822097"
     },
     {
       "id": "park_013",
@@ -862,7 +934,8 @@
         "fleuve"
       ],
       "short_description": "Promenade aménagée le long de la Saône.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_014",
@@ -874,7 +947,8 @@
         "famille"
       ],
       "short_description": "Parc de quartier calme et verdoyant.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-montel"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-montel",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.77352&lng=4.79979"
     },
     {
       "id": "park_015",
@@ -885,7 +959,8 @@
         "nature"
       ],
       "short_description": "Petit parc arboré dans l’ouest lyonnais.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_016",
@@ -897,7 +972,8 @@
         "détente"
       ],
       "short_description": "Parc récent aménagé autour d’un vallon.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-du-vallon"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-du-vallon",
+      "image_url": "https://media.lyon-france.com/1600x600/140103/9128501.jpg"
     },
     {
       "id": "park_017",
@@ -909,7 +985,8 @@
         "quartier"
       ],
       "short_description": "Square de quartier arboré.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_018",
@@ -921,7 +998,8 @@
         "jardin"
       ],
       "short_description": "Square offrant une belle vue sur la Presqu’île.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_019",
@@ -933,7 +1011,8 @@
         "histoire"
       ],
       "short_description": "Petit square à proximité des vestiges antiques.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_020",
@@ -945,7 +1024,8 @@
         "famille"
       ],
       "short_description": "Parc de quartier avec espaces verts et jeux.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_021",
@@ -957,7 +1037,8 @@
         "détente"
       ],
       "short_description": "Parc urbain moderne à proximité des universités.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_022",
@@ -969,7 +1050,8 @@
         "promenade"
       ],
       "short_description": "Parc naturel le long de la rivière Yzeron.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_023",
@@ -981,7 +1063,8 @@
         "panorama"
       ],
       "short_description": "Jardin en terrasses avec vue sur la ville.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_024",
@@ -993,7 +1076,8 @@
         "nature"
       ],
       "short_description": "Parc linéaire au pied de la colline de la Croix-Rousse.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "park_025",
@@ -1005,7 +1089,8 @@
         "jardin"
       ],
       "short_description": "Parc culturel accueillant des événements artistiques.",
-      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-la-cerisaie-parc-chaziere"
+      "url": "https://www.visiterlyon.com/sortir/parcs-jardins-et-lieux-de-balade/parc-de-la-cerisaie-parc-chaziere",
+      "image_url": "https://media.lyon-france.com/1600x600/132204/21586827.png"
     },
     {
       "id": "restaurant_001",
@@ -1017,7 +1102,8 @@
         "tradition"
       ],
       "short_description": "Bouchon lyonnais réputé pour sa cuisine traditionnelle.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_002",
@@ -1029,7 +1115,8 @@
         "gastronomie"
       ],
       "short_description": "Institution lyonnaise de la cuisine traditionnelle.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_003",
@@ -1041,7 +1128,8 @@
         "gastronomie"
       ],
       "short_description": "Bouchon emblématique de Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_004",
@@ -1052,7 +1140,8 @@
         "gastronomie"
       ],
       "short_description": "Restaurant gastronomique historique de Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_005",
@@ -1064,7 +1153,8 @@
         "marché"
       ],
       "short_description": "Temple de la gastronomie lyonnaise.",
-      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/adresses-gourmandes/halles-de-lyon-paul-bocuse"
+      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/adresses-gourmandes/halles-de-lyon-paul-bocuse",
+      "image_url": "https://www.visiterlyon.com/var/site/storage/images/9/0/9/5/755909-1-fre-FR/598be7bc4493-halles-paul-bocuse_Yanis-Ourabah.jpg"
     },
     {
       "id": "restaurant_006",
@@ -1075,7 +1165,8 @@
         "bouchon"
       ],
       "short_description": "Bouchon traditionnel apprécié des locaux.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_007",
@@ -1086,7 +1177,8 @@
         "bouchon"
       ],
       "short_description": "Adresse conviviale de spécialités lyonnaises.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_008",
@@ -1097,7 +1189,8 @@
         "bouchon"
       ],
       "short_description": "Bouchon chaleureux à deux pas de Bellecour.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_009",
@@ -1108,7 +1201,8 @@
         "gastronomie"
       ],
       "short_description": "Restaurant mythique de Paul Bocuse.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_010",
@@ -1119,7 +1213,8 @@
         "brasserie"
       ],
       "short_description": "Grande brasserie historique de Lyon.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/soierie-saint-georges"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/soierie-saint-georges",
+      "image_url": "https://media.lyon-france.com/1600x600/770253/9664397.jpg"
     },
     {
       "id": "restaurant_011",
@@ -1131,7 +1226,8 @@
         "moderne"
       ],
       "short_description": "Cuisine créative et moderne.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_012",
@@ -1142,7 +1238,8 @@
         "gastronomie"
       ],
       "short_description": "Restaurant gastronomique contemporain.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_013",
@@ -1154,7 +1251,8 @@
         "café"
       ],
       "short_description": "Adresse réputée pour ses brunchs.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_014",
@@ -1166,7 +1264,8 @@
         "gastronomie"
       ],
       "short_description": "Restaurant gastronomique végétarien.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_015",
@@ -1177,7 +1276,8 @@
         "moderne"
       ],
       "short_description": "Cuisine contemporaine et inventive.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_016",
@@ -1188,7 +1288,8 @@
         "bouchon"
       ],
       "short_description": "Bouchon traditionnel au décor atypique.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/ol-le-musee"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/les-musees-de-lyon/ol-le-musee",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.765767&lng=4.981939"
     },
     {
       "id": "restaurant_017",
@@ -1199,7 +1300,8 @@
         "bouchon"
       ],
       "short_description": "Bouchon ancien et très populaire.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_018",
@@ -1210,7 +1312,8 @@
         "moderne"
       ],
       "short_description": "Cuisine créative et originale.",
-      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/mode-et-pret-a-porter/bijouterie-aigue-marine"
+      "url": "https://www.visiterlyon.com/sortir/boutiques-et-shopping/mode-et-pret-a-porter/bijouterie-aigue-marine",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.876375&lng=4.839617"
     },
     {
       "id": "restaurant_019",
@@ -1221,7 +1324,8 @@
         "gastronomie"
       ],
       "short_description": "Cuisine gastronomique contemporaine.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_020",
@@ -1232,7 +1336,8 @@
         "cuisine du sud"
       ],
       "short_description": "Cuisine ensoleillée par Paul Bocuse.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_021",
@@ -1243,7 +1348,8 @@
         "gastronomie"
       ],
       "short_description": "Restaurant gastronomique discret.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_022",
@@ -1254,7 +1360,8 @@
         "bouchon"
       ],
       "short_description": "Bouchon labellisé, très apprécié.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/lieux-de-spectacle/les-lyonnais-le-caveau"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/culture-et-musees/lieux-de-spectacle/les-lyonnais-le-caveau",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.761909&lng=4.826218"
     },
     {
       "id": "restaurant_023",
@@ -1265,7 +1372,8 @@
         "bouchon"
       ],
       "short_description": "Cuisine lyonnaise authentique.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_024",
@@ -1276,7 +1384,8 @@
         "gastronomie"
       ],
       "short_description": "Restaurant gastronomique étoilé.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_025",
@@ -1287,7 +1396,8 @@
         "gastronomie"
       ],
       "short_description": "Cuisine raffinée et moderne.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_026",
@@ -1298,7 +1408,8 @@
         "asiatique"
       ],
       "short_description": "Cuisine asiatique contemporaine.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_027",
@@ -1310,7 +1421,8 @@
         "local"
       ],
       "short_description": "Cuisine responsable et locale.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_028",
@@ -1321,7 +1433,8 @@
         "brasserie"
       ],
       "short_description": "Brasserie moderne et conviviale.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_029",
@@ -1332,7 +1445,8 @@
         "moderne"
       ],
       "short_description": "Cuisine créative dans un cadre industriel.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_030",
@@ -1343,7 +1457,8 @@
         "brunch"
       ],
       "short_description": "Adresse connue pour ses brunchs.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_031",
@@ -1354,7 +1469,8 @@
         "moderne"
       ],
       "short_description": "Cuisine inventive et produits frais.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_032",
@@ -1365,7 +1481,8 @@
         "bistrot"
       ],
       "short_description": "Cuisine bistrot moderne.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_033",
@@ -1376,7 +1493,8 @@
         "gastronomie"
       ],
       "short_description": "Restaurant gastronomique dans un cadre Renaissance.",
-      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/bien-etre/spa-cour-des-loges"
+      "url": "https://www.visiterlyon.com/sortir/culture-et-loisirs/activites-loisirs-et-bien-etre/bien-etre/spa-cour-des-loges",
+      "image_url": "https://www.visiterlyon.com/map/static?lat=45.763334&lng=4.827469"
     },
     {
       "id": "restaurant_034",
@@ -1387,7 +1505,8 @@
         "bistrot"
       ],
       "short_description": "Bistrot moderne et convivial.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_035",
@@ -1398,7 +1517,8 @@
         "moderne"
       ],
       "short_description": "Cuisine contemporaine dans un cadre chaleureux.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_036",
@@ -1409,7 +1529,8 @@
         "bistrot"
       ],
       "short_description": "Bistrot convivial sur les pentes.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_037",
@@ -1420,7 +1541,8 @@
         "végétarien"
       ],
       "short_description": "Cuisine végétarienne et gourmande.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_038",
@@ -1432,7 +1554,8 @@
         "tradition"
       ],
       "short_description": "Bouchon lyonnais au cœur de la Presqu’île.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_039",
@@ -1443,7 +1566,8 @@
         "brasserie"
       ],
       "short_description": "Brasserie emblématique de Bellecour.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     },
     {
       "id": "restaurant_040",
@@ -1454,7 +1578,8 @@
         "bouchon"
       ],
       "short_description": "Bouchon traditionnel sous les voûtes du Vieux Lyon.",
-      "url": null
+      "url": "https://www.visiterlyon.com/",
+      "image_url": null
     }
   ]
 }
