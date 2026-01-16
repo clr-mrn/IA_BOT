@@ -7,7 +7,7 @@ Le projet est composé de deux services :
 - **MCP** : service de scraping qui expose des tools (catégories, lieux, événements)
 
 ## Prérequis
-- Python 3.10+
+- Python 3.12 ou 3.13
 - Un environnement virtuel Python
 - Ollama installé et lancé en local
 
@@ -24,13 +24,18 @@ pip install -r backend/requirements.txt
 pip install -r mcp/requirements.txt
 
 uvicorn mcp.app:app --reload --port 8001
-
+```
+dans un nouveau terminal :
+```bash
 uvicorn backend.app:app --reload --port 8000
+```
 
+pour tester dans un autre terminal :
+```
 curl http://localhost:8001/health
 curl http://localhost:8000/health
 ```
-
+Pour lancer l'interface
 ```bash
 npm install
 npm run dev
