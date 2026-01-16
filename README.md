@@ -14,6 +14,7 @@ Le projet est composé de deux services :
 ## Installation
 
 Depuis la racine du projet :
+dans un terminal git bash
 
 ```bash
 python -m venv .venv
